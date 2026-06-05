@@ -41,14 +41,49 @@ const sfx = new SoundFX();
 // ── MÀN 1: 20 câu hỏi trắc nghiệm ──────────────────────────────────────────
 const ALL_Q1 = [
   {
+    q: "Trong tác phẩm 'Sửa đổi lối làm việc' (1947), Chủ tịch Hồ Chí Minh đã ví đạo đức cách mạng đối với con người như yếu tố nào của cây và sông?",
+    opts: ["Là hoa quả của cây và dòng chảy của sông","Là cành lá của cây và là phù sa của sông","Là gốc của cây và nguồn của sông","Là thân cây và đáy sông"],
+    ans: 2, exp: "Đạo đức cách mạng là GỐC của cây và NGUỒN của sông – Bác nhấn mạnh đạo đức là nền tảng căn bản, không thể thiếu của người cách mạng."
+  },
+  {
+    q: "Theo tư tưởng Hồ Chí Minh, ý nghĩa sâu sắc nhất của câu nói 'Hiểu chủ nghĩa Mác–Lênin là phải sống với nhau có tình có nghĩa' là gì?",
+    opts: ["Người học lý luận chính trị cần ghi nhớ nhiều kiến thức","Đạo đức cách mạng phải được thể hiện bằng hành động và cách đối xử với con người","Chỉ cần sống tình cảm là đủ để trở thành người cách mạng","Người có học thức cao sẽ tự có đạo đức tốt"],
+    ans: 1, exp: "Bác nhấn mạnh lý luận phải gắn với thực tiễn – đạo đức cách mạng không chỉ là nhận thức mà phải được thể hiện qua hành động và ứng xử thực tế."
+  },
+  {
+    q: "Theo tư tưởng Hồ Chí Minh, đâu là biểu hiện đúng của tinh thần 'Cần và Kiệm' đối với sinh viên hiện nay?",
+    opts: ["Chỉ cần học giỏi, không cần quan tâm đến cách chi tiêu","Làm việc chăm chỉ nhưng tiêu xài thoải mái để hưởng thụ cuộc sống","Chủ động học tập, quản lý thời gian hợp lý và biết tiết kiệm, tránh lãng phí","Tiết kiệm tối đa bằng cách hạn chế tham gia mọi hoạt động xã hội"],
+    ans: 2, exp: "Cần = chăm chỉ, sáng tạo trong học tập; Kiệm = tiết kiệm thời gian, tiền bạc, tránh xa hoa lãng phí – hai đức tính phải song hành."
+  },
+  {
+    q: "Theo tư tưởng đạo đức của Hồ Chí Minh, hành động nào dưới đây thể hiện đầy đủ cả đức 'Liêm' và 'Chính'?",
+    opts: ["Giúp bạn làm bài kiểm tra để giữ tình bạn","Im lặng khi thấy bạn gian lận để tránh mất đoàn kết","Trung thực trong học tập và thẳng thắn góp ý khi bạn mắc sai lầm","Chỉ tập trung học tốt mà không quan tâm đến hành vi sai trái xung quanh"],
+    ans: 2, exp: "Liêm = trong sạch, không tham lam; Chính = thẳng thắn, không dung túng sai trái – cả hai thể hiện qua sự trung thực và can đảm góp ý."
+  },
+  {
+    q: "Một sinh viên có lý tưởng cao đẹp nhưng liên tục bỏ bê việc học dẫn đến nợ môn. Dưới góc nhìn 'Thống nhất nhân cách' của Hồ Chí Minh, sinh viên này đang vi phạm biểu hiện nào?",
+    opts: ["Có Đức thiếu Tài – Dù có lòng tốt nhưng thiếu năng lực thực tiễn thì không thể đóng góp thực chất","Có Tài thiếu Đức – Vì không hoàn thành trách nhiệm học tập","Hoàn toàn vô dụng – Vì không đem lại bất kỳ giá trị kinh tế nào","Không vi phạm – Vì trách nhiệm xã hội luôn được ưu tiên hơn kết quả học tập"],
+    ans: 0, exp: "Có Đức mà thiếu Tài: Dù lý tưởng tốt nhưng thiếu năng lực chuyên môn (nợ môn, không tốt nghiệp) thì không thể phụng sự đất nước một cách thực chất."
+  },
+  {
+    q: "Nội dung 'trung với nước, hiếu với dân' của Hồ Chí Minh kế thừa từ truyền thống nào của dân tộc?",
+    opts: ["Tôn sư trọng đạo","Uống nước nhớ nguồn","Trung quân ái quốc và yêu thương nhân dân","Đoàn kết quốc tế"],
+    ans: 2, exp: "Bác kế thừa và phát triển: 'trung' không còn là trung với vua mà là trung với nước, 'hiếu' không chỉ với cha mẹ mà là hiếu với toàn dân tộc."
+  },
+  {
+    q: "Một trong những nguyên tắc quan trọng bậc nhất trong xây dựng đạo đức cách mạng theo quan điểm Hồ Chí Minh là?",
+    opts: ["Nói đi đôi với làm, nêu gương về đạo đức","Xây đi đôi với chống","Cần, kiệm, liêm, chính, chí công vô tư","Trung với nước, hiếu với dân"],
+    ans: 0, exp: "Nói đi đôi với làm – nêu gương về đạo đức là nguyên tắc hàng đầu: người cán bộ phải hành động đúng với những gì mình tuyên truyền."
+  },
+  {
+    q: "Vì sao Hồ Chí Minh cho rằng 'chí công vô tư' là điều kiện quan trọng để xây dựng bộ máy trong sạch, vững mạnh?",
+    opts: ["'Chí công vô tư' tạo ra nguồn động lực chính giúp phát triển kinh tế giàu mạnh","'Chí công vô tư' góp phần ngăn chặn chủ nghĩa cá nhân, tham nhũng và quan liêu","'Chí công vô tư' giúp tạo môi trường nâng cao các kỹ năng chuyên môn","'Chí công vô tư' chỉ cần thiết với người lãnh đạo cấp cao"],
+    ans: 1, exp: "Chí công vô tư là liều thuốc chống lại chủ nghĩa cá nhân – kẻ thù nguy hiểm nhất của sự nghiệp cách mạng, giúp bộ máy nhà nước trong sạch, phục vụ nhân dân."
+  },
+  {
     q: "Đối tượng nghiên cứu của môn học Tư tưởng Hồ Chí Minh là gì?",
     opts: ["Hệ thống quan điểm, lý luận về cách mạng Việt Nam qua thực tiễn","Tiểu sử và lịch sử biên niên của gia đình Hồ Chí Minh","Quá trình xây dựng kinh tế thị trường định hướng XHCN","Các học thuyết triết học phương Tây thời Phục Hưng"],
     ans: 0, exp: "Đối tượng là toàn bộ hệ thống quan điểm lý luận về cách mạng Việt Nam, được hình thành và kiểm nghiệm qua thực tiễn hoạt động của Người."
-  },
-  {
-    q: "Tại Đại hội Đảng nào, Tư tưởng Hồ Chí Minh chính thức được ghi là nền tảng tư tưởng của Đảng?",
-    opts: ["Đại hội VI (1986)","Đại hội VII (1991)","Đại hội IX (2001)","Đại hội XI (2011)"],
-    ans: 1, exp: "Đại hội VII (1991) ghi vào Cương lĩnh và Điều lệ Đảng vai trò nền tảng của Chủ nghĩa Mác-Lênin và Tư tưởng Hồ Chí Minh."
   },
   {
     q: "Nguồn gốc lý luận quyết định bước chuyển về chất trong tư tưởng cứu nước của Hồ Chí Minh?",
@@ -56,90 +91,15 @@ const ALL_Q1 = [
     ans: 0, exp: "Chủ nghĩa Mác-Lênin chính là nguồn gốc trực tiếp và quyết định, đưa Bác từ chủ nghĩa yêu nước tiến lên lập trường cộng sản vô sản."
   },
   {
-    q: "Độc lập dân tộc phải gắn liền với điều gì để đảm bảo tự do, ấm no thực sự cho nhân dân?",
-    opts: ["Chủ nghĩa xã hội","Kinh tế tư nhân tự do","Liên minh với các đế quốc lớn","Chế độ phong kiến tiến bộ"],
-    ans: 0, exp: "Độc lập dân tộc gắn liền với chủ nghĩa xã hội là sợi chỉ đỏ xuyên suốt toàn bộ tư tưởng Hồ Chí Minh."
-  },
-  {
-    q: "Đảng Cộng sản Việt Nam theo Hồ Chí Minh đại diện cho lợi ích của ai?",
-    opts: ["Giai cấp công nhân, nhân dân lao động và toàn dân tộc","Chỉ liên minh công nhân - nông dân","Phú nông, tư sản và địa chủ yêu nước","Trí thức và lực lượng quân sự cách mạng"],
-    ans: 0, exp: "Đảng đại diện trung thành cho giai cấp công nhân, nhân dân lao động và toàn thể dân tộc Việt Nam."
-  },
-  {
     q: "Hồ Chí Minh ra đi tìm đường cứu nước vào năm nào và từ đâu?",
     opts: ["Năm 1911 từ Bến Nhà Rồng, Sài Gòn","Năm 1908 từ Huế, Trung Kỳ","Năm 1919 từ Paris, Pháp","Năm 1924 từ Quảng Châu, Trung Quốc"],
     ans: 0, exp: "Ngày 5/6/1911, Nguyễn Tất Thành rời bến cảng Nhà Rồng (Sài Gòn) trên con tàu Amiral Latouche-Tréville để bắt đầu hành trình tìm đường cứu nước."
-  },
-  {
-    q: "Sự kiện nào chứng tỏ Nguyễn Ái Quốc đã tìm thấy con đường cứu nước đúng đắn vào năm 1920?",
-    opts: ["Đọc bản Sơ thảo Luận cương của Lênin về vấn đề dân tộc và thuộc địa","Gặp Chủ tịch Hồ Chí Minh tại Moskva","Tham gia Cách mạng Tháng Mười Nga","Thành lập Hội Việt Nam Cách mạng Thanh niên"],
-    ans: 0, exp: "Đọc 'Sơ thảo lần thứ nhất những luận cương về vấn đề dân tộc và vấn đề thuộc địa' của Lênin là bước ngoặt quyết định chuyển Nguyễn Ái Quốc sang lập trường cộng sản."
-  },
-  {
-    q: "Tổ chức tiền thân nào do Nguyễn Ái Quốc thành lập năm 1925 tại Quảng Châu, đào tạo cán bộ cách mạng?",
-    opts: ["Hội Việt Nam Cách mạng Thanh niên","Tân Việt Cách mạng Đảng","Việt Nam Quốc dân Đảng","Đảng Cộng sản Đông Dương"],
-    ans: 0, exp: "Hội Việt Nam Cách mạng Thanh niên (1925) là tổ chức tiền thân trực tiếp, nơi đào tạo hàng trăm cán bộ cách mạng nòng cốt cho Đảng sau này."
   },
   {
     q: "Theo Hồ Chí Minh, muốn cứu nước và giải phóng dân tộc, không có con đường nào khác ngoài con đường nào?",
     opts: ["Con đường cách mạng vô sản","Con đường cải lương tư sản","Con đường dựa vào đế quốc Mỹ","Con đường phong kiến tiến bộ"],
     ans: 0, exp: "Người khẳng định: 'Muốn cứu nước và giải phóng dân tộc không có con đường nào khác con đường cách mạng vô sản.'"
   },
-  {
-    q: "Hồ Chí Minh viết 'Đường Kách Mệnh' vào năm nào và nhằm mục đích gì?",
-    opts: ["1927 – tác phẩm lý luận cách mạng đầu tiên, chuẩn bị tư tưởng cho Đảng","1930 – tuyên ngôn thành lập Đảng Cộng sản Việt Nam","1945 – cương lĩnh xây dựng nhà nước DCCH","1951 – định hướng chiến lược kháng chiến"],
-    ans: 0, exp: "'Đường Kách Mệnh' (1927) là tác phẩm lý luận đầu tiên hệ thống hóa quan điểm cách mạng, đặt nền tảng tư tưởng và tổ chức cho sự ra đời của Đảng."
-  },
-  {
-    q: "Theo Hồ Chí Minh, đặc trưng bản chất nhất của chủ nghĩa xã hội ở Việt Nam là gì?",
-    opts: ["Do nhân dân lao động làm chủ, nhà nước là của dân, do dân, vì dân","Quốc hữu hóa toàn bộ tư liệu sản xuất, xóa bỏ hoàn toàn tư hữu","Xây dựng kinh tế kế hoạch hóa tập trung theo mô hình Liên Xô","Tập thể hóa nông nghiệp triệt để theo gương Cách mạng Văn hóa Trung Quốc"],
-    ans: 0, exp: "Chủ nghĩa xã hội theo Hồ Chí Minh là chế độ do nhân dân làm chủ, nhà nước của dân, do dân, vì dân, kinh tế phát triển cao, văn hóa tiên tiến."
-  },
-  {
-    q: "Trong tư tưởng Hồ Chí Minh, 'văn hóa soi đường quốc dân đi' có nghĩa là gì?",
-    opts: ["Văn hóa giữ vai trò định hướng, dẫn dắt sự nghiệp cách mạng và phát triển đất nước","Văn hóa chỉ là sản phẩm phụ của nền kinh tế, không có vai trò độc lập","Văn hóa phải phục tùng hoàn toàn đường lối chính trị của nhà nước","Chỉ có văn hóa phương Tây mới đủ sức dẫn đường cho dân tộc"],
-    ans: 0, exp: "Người đặt văn hóa ngang tầm với chính trị, kinh tế, quân sự: văn hóa có sức mạnh định hướng, soi sáng con đường đi của cả dân tộc."
-  },
-  {
-    q: "Quan điểm của Hồ Chí Minh về mối quan hệ giữa đức và tài trong người cán bộ, đảng viên?",
-    opts: ["Đức là gốc, tài là quan trọng; cán bộ phải có đức, có tài, nhưng đức là nền tảng","Tài quan trọng hơn đức vì tài quyết định năng lực thực thi nhiệm vụ","Đức và tài bình đẳng nhau tuyệt đối, không thể thiếu yếu tố nào","Chỉ cần đức, tài là thứ yếu vì học tập có thể bù đắp sau"],
-    ans: 0, exp: "Người khẳng định: 'Có tài mà không có đức là người vô dụng, có đức mà không có tài thì làm việc gì cũng khó.' Nhưng đức là gốc."
-  },
-  {
-    q: "Nguyên tắc nào được Hồ Chí Minh coi là nguyên tắc tối cao trong quan hệ quốc tế?",
-    opts: ["Tôn trọng độc lập, chủ quyền và toàn vẹn lãnh thổ của nhau","Lợi ích dân tộc phải phục tùng lợi ích giai cấp quốc tế","Ưu tiên liên minh với các nước lớn và cường quốc","Không tham gia bất kỳ liên minh quân sự nào"],
-    ans: 0, exp: "Hồ Chí Minh luôn coi tôn trọng độc lập, chủ quyền quốc gia, bình đẳng và không can thiệp nội bộ là nguyên tắc tối cao trong bang giao quốc tế."
-  },
-  {
-    q: "Theo Hồ Chí Minh, cách mạng giải phóng dân tộc ở thuộc địa có thể nổ ra trước và giành thắng lợi trước cách mạng vô sản ở chính quốc không?",
-    opts: ["Có thể và cần thiết, không nên thụ động chờ đợi","Không thể, phải chờ đến khi cách mạng vô sản chính quốc thắng lợi","Phải xảy ra đồng thời với cách mạng chính quốc","Chỉ thắng lợi khi có sự lãnh đạo trực tiếp của Quốc tế Cộng sản"],
-    ans: 0, exp: "Đây là luận điểm sáng tạo của Hồ Chí Minh, khẳng định tính chủ động của cách mạng thuộc địa, không cần thụ động chờ đợi chính quốc."
-  },
-  {
-    q: "Hồ Chí Minh xác định lực lượng nòng cốt, trung tâm của Mặt trận đoàn kết dân tộc là gì?",
-    opts: ["Liên minh công nhân - nông dân - trí thức","Chỉ giai cấp công nhân","Giai cấp tư sản dân tộc tiến bộ","Tầng lớp sĩ phu yêu nước"],
-    ans: 0, exp: "Liên minh công - nông - trí thức là nền tảng vững chắc của khối đại đoàn kết toàn dân tộc trong tư tưởng Hồ Chí Minh."
-  },
-  {
-    q: "Trong tư tưởng Hồ Chí Minh, 'Dân là gốc' có hàm nghĩa chính trị cốt lõi là gì?",
-    opts: ["Nhân dân là chủ thể quyền lực, nguồn gốc của sức mạnh và tính hợp pháp của nhà nước","Dân số đông là sức mạnh kinh tế của đất nước","Nhân dân cần được nhà nước nuôi dưỡng và bảo vệ như gốc cây","Dân là tài nguyên cần được khai thác phục vụ mục tiêu quốc gia"],
-    ans: 0, exp: "'Dân là gốc' khẳng định nhân dân là chủ thể tối cao: mọi quyền lực đều từ dân mà ra, phục vụ cho lợi ích của dân."
-  },
-  {
-    q: "Điều gì được Hồ Chí Minh coi là 'vũ khí sắc bén nhất' để xây dựng Đảng về tư tưởng?",
-    opts: ["Thực hành tự phê bình và phê bình","Học tập lý luận Mác-Lênin","Thanh trừng các phần tử xét lại","Tập trung quyền lực vào bộ máy kiểm tra Đảng"],
-    ans: 0, exp: "Hồ Chí Minh coi tự phê bình và phê bình là quy luật phát triển của Đảng, vũ khí để Đảng tự làm sạch, tự hoàn thiện mình."
-  },
-  {
-    q: "Hồ Chí Minh nêu 5 điều Bác Hồ dạy thiếu nhi. Điều thứ nhất là gì?",
-    opts: ["Yêu Tổ quốc, yêu đồng bào","Học tập tốt, lao động tốt","Đoàn kết tốt, kỷ luật tốt","Giữ gìn vệ sinh thật tốt"],
-    ans: 0, exp: "Điều 1 trong 5 điều Bác Hồ dạy: 'Yêu Tổ quốc, yêu đồng bào' – đặt tình yêu đất nước, yêu nhân dân lên hàng đầu."
-  },
-  {
-    q: "Tác phẩm 'Bản án chế độ thực dân Pháp' (1925) của Nguyễn Ái Quốc có ý nghĩa gì?",
-    opts: ["Vạch trần tội ác chủ nghĩa thực dân và thức tỉnh tinh thần đấu tranh của các dân tộc bị áp bức","Trình bày cương lĩnh thành lập Đảng Cộng sản Việt Nam","Tổng kết kinh nghiệm Cách mạng Tháng Mười Nga","Lý luận hóa quan điểm về chủ nghĩa xã hội khoa học"],
-    ans: 0, exp: "'Bản án chế độ thực dân Pháp' là bức tranh toàn cảnh về tội ác thực dân, thức tỉnh nhân dân thuộc địa và phong trào cộng sản quốc tế."
-  }
 ];
 
 // ── MÀN 2: 8 mốc lịch sử, mỗi lần chơi dùng 5 ─────────────────────────────
@@ -239,6 +199,7 @@ const S = {
 // APP ROOT
 // ===========================================================================================
 export default function App() {
+  const [showIntro, setShowIntro] = useState(true);
   const [screen, setScreen]   = useState('welcome');
   const [score, setScore]     = useState(0);
   const [lives, setLives]     = useState(3);
@@ -263,6 +224,8 @@ export default function App() {
   const inGame = ['level1','level2','level3','level4'].includes(screen);
 
   return (
+    <>
+    {showIntro && <IntroPopup onClose={() => setShowIntro(false)} />}
     <div style={{
       height:'100vh', width:'100%', background:'#080a0f',
       display:'flex', alignItems:'stretch', justifyContent:'center',
@@ -353,17 +316,262 @@ export default function App() {
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap');
         @keyframes fadeUp { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
+        @keyframes introPop { from { opacity:0; transform:scale(0.88) translateY(24px); } to { opacity:1; transform:scale(1) translateY(0); } }
+        @keyframes introFadeIn { from { opacity:0; } to { opacity:1; } }
+        @keyframes shimmerLine { 0%{background-position:200% center} 100%{background-position:-200% center} }
+        @keyframes starFloat { 0%,100%{transform:translateY(0) rotate(0deg);} 50%{transform:translateY(-10px) rotate(180deg);} }
         @keyframes shakeFx { 0%,100%{transform:translateX(0)} 20%,60%{transform:translateX(-8px)} 40%,80%{transform:translateX(8px)} }
         @keyframes glowBoss { 0%,100%{filter:drop-shadow(0 0 8px rgba(239,68,68,0.4))} 50%{filter:drop-shadow(0 0 22px rgba(239,68,68,0.9))} }
         @keyframes floatUp { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
         @keyframes pulsate { 0%,100%{opacity:1} 50%{opacity:0.5} }
         @keyframes timerShrink { from{width:100%} to{width:0%} }
+        @keyframes bombFly { 0%{transform:translate(0,0) scale(1); opacity:1;} 80%{transform:translate(var(--bx),var(--by)) scale(1.3); opacity:1;} 100%{transform:translate(var(--bx),var(--by)) scale(0); opacity:0;} }
+        @keyframes explode { 0%{transform:scale(0); opacity:1;} 50%{transform:scale(2.5); opacity:0.9;} 100%{transform:scale(4); opacity:0;} }
+        @keyframes castleShake { 0%,100%{transform:translateX(0) rotate(0deg);} 15%{transform:translateX(-10px) rotate(-2deg);} 30%{transform:translateX(8px) rotate(1deg);} 45%{transform:translateX(-6px) rotate(-1deg);} 60%{transform:translateX(6px) rotate(1deg);} 75%{transform:translateX(-4px) rotate(0deg);} }
+        @keyframes castleCrumble { 0%{opacity:1; transform:scale(1);} 30%{opacity:0.7; transform:scale(1.05);} 60%{opacity:0.4; transform:scale(0.9) rotate(3deg);} 100%{opacity:0; transform:scale(0.5) rotate(8deg) translateY(20px);} }
+        @keyframes attackFly { 0%{transform:translate(0,0) scale(1); opacity:1;} 100%{transform:translate(var(--ax),var(--ay)) scale(0.6); opacity:0;} }
+        @keyframes crackAppear { from{opacity:0; transform:scale(0.5);} to{opacity:1; transform:scale(1);} }
+        @keyframes coreFloat { 0%,100%{transform:translateY(0) scale(1);} 50%{transform:translateY(-6px) scale(1.05);} }
+        @keyframes coreGlow { 0%,100%{box-shadow:0 0 12px var(--core-color,#fff);} 50%{box-shadow:0 0 28px var(--core-color,#fff), 0 0 50px var(--core-color,#fff);} }
+        @keyframes overlayIn { from{opacity:0; transform:scale(0.85);} to{opacity:1; transform:scale(1);} }
+        @keyframes starTwinkle { 0%,100%{opacity:0.8; transform:scale(1);} 50%{opacity:1; transform:scale(1.2); filter:drop-shadow(0 0 12px #fcd34d);} }
+        @keyframes laserDraw { from{stroke-dashoffset: 100;} to{stroke-dashoffset: 0;} }
+        @keyframes slotIn { 0%{transform:scale(1.5); opacity:0;} 100%{transform:scale(1); opacity:1;} }
+        @keyframes flashRed { 0%,100%{background:transparent;} 50%{background:rgba(239,68,68,0.2);} }
+        @keyframes slashFly { 0%{transform:translate(0,0) scale(0.5) rotate(45deg); opacity:0;} 20%{opacity:1;} 80%{transform:translate(180px,0) scale(1.5) rotate(45deg); opacity:1;} 100%{transform:translate(200px,0) scale(2) rotate(45deg); opacity:0;} }
+        @keyframes orbFly { 0%{transform:translate(0,0) scale(0.5); opacity:0;} 20%{opacity:1;} 80%{transform:translate(-180px,0) scale(1.2); opacity:1;} 100%{transform:translate(-200px,0) scale(1.5); opacity:0;} }
+        @keyframes floatTextUp { 0%{transform:translateY(10px) scale(0.8); opacity:0;} 20%{transform:translateY(0) scale(1.2); opacity:1;} 80%{transform:translateY(-30px) scale(1); opacity:1;} 100%{transform:translateY(-40px) scale(0.9); opacity:0;} }
+        @keyframes diceRoll { 0%{transform:rotate(0deg) scale(1);} 25%{transform:rotate(90deg) scale(1.2);} 50%{transform:rotate(180deg) scale(0.9);} 75%{transform:rotate(270deg) scale(1.1);} 100%{transform:rotate(360deg) scale(1);} }
+        @keyframes meteorShower { 0%{transform:translate(200px,-200px); opacity:0;} 20%{opacity:1;} 80%{transform:translate(-50px,100px); opacity:1;} 100%{transform:translate(-100px,150px); opacity:0;} }
+        @keyframes fireRain { 0%{transform:translateY(-200px); opacity:0;} 50%{opacity:1;} 100%{transform:translateY(200px); opacity:0;} }
+        @keyframes meteoriteDrop { 0%{transform:translateY(-300px) scale(1.5); opacity:0;} 20%{opacity:1;} 60%{transform:translateY(20px) scale(1.5); opacity:1;} 100%{transform:translateY(50px) scale(2); opacity:0;} }
+        @keyframes dragonFly { 0%{transform:translate(-300px,0) scale(1.5); opacity:0;} 10%{opacity:1;} 90%{transform:translate(300px,0) scale(1.5); opacity:1;} 100%{transform:translate(400px,0) scale(1.5); opacity:0;} }
+        @keyframes lightningStrike { 0%,100%{opacity:0; transform:scaleY(0);} 10%,30%,50%{opacity:1; transform:scaleY(1);} 20%,40%{opacity:0.2; transform:scaleY(1);} }
         .shake { animation: shakeFx 0.5s ease; }
+        .castle-shake { animation: castleShake 0.6s ease; }
         .boss-glow { animation: glowBoss 1.5s ease-in-out infinite; }
+        .boss-enraged { animation: glowBoss 0.5s ease-in-out infinite; filter: drop-shadow(0 0 20px #ef4444); }
         .float { animation: floatUp 2.5s ease-in-out infinite; }
         .pulse { animation: pulsate 1.2s ease-in-out infinite; }
+        .pulse-fast { animation: pulsate 0.5s ease-in-out infinite; }
+        .core-float { animation: coreFloat 2s ease-in-out infinite; }
+        .core-glow { animation: coreGlow 2s ease-in-out infinite; }
+        .star-twinkle { animation: starTwinkle 3s infinite ease-in-out; }
+        .laser-line { stroke-dasharray: 100; animation: laserDraw 0.6s linear forwards; }
+        .slot-in { animation: slotIn 0.3s cubic-bezier(.2,.8,.4,1); }
+        .bg-flash-red { animation: flashRed 0.8s ease; }
+        .dice-rolling { animation: diceRoll 0.4s linear infinite; }
+        .meteor-1 { animation: meteorShower 0.5s forwards linear; }
+        .meteor-2 { animation: meteorShower 0.6s forwards linear 0.1s; }
+        .meteor-3 { animation: meteorShower 0.4s forwards linear 0.2s; }
+        .fire-drop { animation: fireRain 0.6s forwards linear; }
+        .meteorite-drop { animation: meteoriteDrop 0.8s forwards cubic-bezier(0.5,0,1,1); }
+        .dragon-fly { animation: dragonFly 1.2s forwards ease-in-out; }
+        .lightning-strike { animation: lightningStrike 0.6s forwards; transform-origin: top; }
         ::-webkit-scrollbar { width:4px; } ::-webkit-scrollbar-track { background:transparent; } ::-webkit-scrollbar-thumb { background:rgba(245,158,11,0.3); border-radius:4px; }
       `}</style>
+    </div>
+    </>
+  );
+}
+
+// ===========================================================================================
+// INTRO POPUP
+// ===========================================================================================
+function IntroPopup({ onClose }) {
+  const [hovered, setHovered] = useState(false);
+  const members = [
+    'Nguyễn Hoàng Cường',
+    'Nguyễn Lê Minh Châu',
+    'Lê Trần Uyên Nhi',
+    'Ngô Thị Thanh Hương',
+    'Đàm Thị Phương Thảo',
+    'Nguyễn Đức Dũng',
+    'Phạm Thế Sơn',
+    'Trần Linh Chi',
+    'Trần Gia Kiên',
+    'Dương Duy Phi',
+  ];
+
+  return (
+    <div style={{
+      position:'fixed', inset:0, zIndex:9999,
+      background:'rgba(4,6,12,0.93)',
+      backdropFilter:'blur(16px)',
+      display:'flex', alignItems:'flex-start', justifyContent:'center',
+      padding:'16px',
+      animation:'introFadeIn 0.5s ease forwards',
+      fontFamily:"'Inter', sans-serif",
+      overflowY:'auto',
+    }}>
+      {/* Ambient glow blobs */}
+      <div style={{ position:'fixed', inset:0, pointerEvents:'none', overflow:'hidden', zIndex:0 }}>
+        <div style={{ position:'absolute', top:'-10%', left:'-10%', width:500, height:500, background:'radial-gradient(circle, rgba(220,38,38,0.12) 0%, transparent 65%)', borderRadius:'50%' }} />
+        <div style={{ position:'absolute', bottom:'-10%', right:'-10%', width:600, height:600, background:'radial-gradient(circle, rgba(245,158,11,0.09) 0%, transparent 65%)', borderRadius:'50%' }} />
+        <div style={{ position:'absolute', top:'40%', left:'50%', width:350, height:350, background:'radial-gradient(circle, rgba(99,102,241,0.07) 0%, transparent 65%)', borderRadius:'50%', transform:'translate(-50%,-50%)' }} />
+      </div>
+
+      {/* Main card */}
+      <div style={{
+        position:'relative', zIndex:10,
+        background:'linear-gradient(160deg, rgba(14,11,8,0.98) 0%, rgba(20,14,10,0.98) 100%)',
+        border:'1px solid rgba(245,158,11,0.22)',
+        borderRadius:28, padding:'32px 40px',
+        maxWidth:760, width:'100%',
+        margin:'auto',
+        boxShadow:'0 40px 100px rgba(0,0,0,0.95), 0 0 80px rgba(245,158,11,0.06), inset 0 1px 0 rgba(255,255,255,0.04)',
+        animation:'introPop 0.5s cubic-bezier(0.16,1,0.3,1) forwards',
+      }}>
+
+        {/* Top badge */}
+        <div style={{ textAlign:'center', marginBottom:20 }}>
+          <div style={{ display:'inline-flex', alignItems:'center', gap:10,
+            background:'rgba(245,158,11,0.08)', border:'1px solid rgba(245,158,11,0.2)',
+            borderRadius:999, padding:'5px 16px', marginBottom:14,
+          }}>
+            <span style={{ fontSize:13 }}>🎓</span>
+            <span style={{ fontSize:11, color:'rgba(245,158,11,0.8)', letterSpacing:3, fontFamily:'monospace', textTransform:'uppercase' }}>HCM202 · Nhóm 1</span>
+          </div>
+
+          {/* Title */}
+          <h1 style={{
+            margin:'0 0 4px', fontSize:28, fontWeight:900,
+            fontFamily:"'Cinzel', serif", letterSpacing:3,
+            background:'linear-gradient(135deg, #fcd34d 0%, #f59e0b 45%, #dc2626 100%)',
+            WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text',
+            lineHeight:1.15, textTransform:'uppercase',
+          }}>Chiến Binh Tư Tưởng</h1>
+          <p style={{ margin:0, fontSize:11, color:'rgba(255,255,255,0.25)', letterSpacing:3, textTransform:'uppercase', fontFamily:'monospace' }}>Interactive Learning Platform</p>
+        </div>
+
+        {/* Divider */}
+        <div style={{ height:1, background:'linear-gradient(90deg, transparent, rgba(245,158,11,0.3), transparent)', marginBottom:20 }} />
+
+        {/* Two column layout */}
+        <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:14, marginBottom:16 }}>
+
+          {/* Mục tiêu */}
+          <div style={{
+            background:'rgba(245,158,11,0.05)', border:'1px solid rgba(245,158,11,0.15)',
+            borderRadius:16, padding:'16px 18px',
+          }}>
+            <div style={{ display:'flex', alignItems:'center', gap:8, marginBottom:10 }}>
+              <span style={{ fontSize:18 }}>🎯</span>
+              <span style={{ fontSize:11, fontWeight:700, color:'#f59e0b', letterSpacing:2, textTransform:'uppercase' }}>Mục Tiêu Dự Án</span>
+            </div>
+            <p style={{ margin:0, fontSize:13, color:'rgba(255,255,255,0.65)', lineHeight:1.75 }}>
+              Tạo ra một <strong style={{ color:'#fcd34d' }}>nền tảng học tập tương tác</strong> giúp sinh viên tiếp cận tư tưởng Hồ Chí Minh một cách <em>dễ dàng và thú vị hơn</em> thông qua trải nghiệm game hóa cao cấp.
+            </p>
+          </div>
+
+          {/* Đối tượng */}
+          <div style={{
+            background:'rgba(99,102,241,0.05)', border:'1px solid rgba(99,102,241,0.15)',
+            borderRadius:16, padding:'16px 18px',
+          }}>
+            <div style={{ display:'flex', alignItems:'center', gap:8, marginBottom:10 }}>
+              <span style={{ fontSize:18 }}>👥</span>
+              <span style={{ fontSize:11, fontWeight:700, color:'#818cf8', letterSpacing:2, textTransform:'uppercase' }}>Đối Tượng</span>
+            </div>
+            <ul style={{ margin:0, padding:0, listStyle:'none', display:'flex', flexDirection:'column', gap:7 }}>
+              {[
+                { icon:'📚', text:'Sinh viên học môn Tư tưởng HCM' },
+                { icon:'🌟', text:'Người quan tâm đến tư tưởng cách mạng' },
+                { icon:'📖', text:'Những ai muốn tìm hiểu lịch sử' },
+              ].map((item, i) => (
+                <li key={i} style={{ display:'flex', alignItems:'center', gap:8, fontSize:12.5, color:'rgba(255,255,255,0.6)' }}>
+                  <span style={{ fontSize:13 }}>{item.icon}</span> {item.text}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        {/* Thông tin nhóm */}
+        <div style={{
+          background:'rgba(16,185,129,0.04)', border:'1px solid rgba(16,185,129,0.14)',
+          borderRadius:16, padding:'16px 18px', marginBottom:16,
+        }}>
+          <div style={{ display:'flex', alignItems:'center', gap:8, marginBottom:12 }}>
+            <span style={{ fontSize:18 }}>🏆</span>
+            <span style={{ fontSize:11, fontWeight:700, color:'#10b981', letterSpacing:2, textTransform:'uppercase' }}>Thông Tin Nhóm</span>
+          </div>
+          <div style={{ display:'flex', flexWrap:'wrap', gap:7, marginBottom:12 }}>
+            {members.map((name, i) => (
+              <div key={i} style={{
+                background:'rgba(255,255,255,0.04)', border:'1px solid rgba(255,255,255,0.08)',
+                borderRadius:10, padding:'6px 14px',
+                fontSize:12.5, color:'rgba(255,255,255,0.72)', fontWeight:500,
+                transition:'all 0.2s',
+              }}
+                onMouseEnter={e => { e.currentTarget.style.background='rgba(245,158,11,0.08)'; e.currentTarget.style.borderColor='rgba(245,158,11,0.25)'; e.currentTarget.style.color='#fcd34d'; }}
+                onMouseLeave={e => { e.currentTarget.style.background='rgba(255,255,255,0.04)'; e.currentTarget.style.borderColor='rgba(255,255,255,0.08)'; e.currentTarget.style.color='rgba(255,255,255,0.72)'; }}
+              >{name}</div>
+            ))}
+          </div>
+          <div style={{ display:'flex', gap:20, flexWrap:'wrap' }}>
+            <div style={{ fontSize:12.5, color:'rgba(255,255,255,0.45)' }}>
+              <span style={{ color:'rgba(255,255,255,0.25)' }}>Giảng viên: </span>
+              <span style={{ color:'#fcd34d', fontWeight:600 }}>Đoàn Thị Vành Khuyên</span>
+            </div>
+            <div style={{ fontSize:12.5, color:'rgba(255,255,255,0.45)' }}>
+              <span style={{ color:'rgba(255,255,255,0.25)' }}>Nội dung: </span>
+              <span style={{ color:'rgba(255,255,255,0.65)' }}>Giáo trình Tư tưởng Hồ Chí Minh</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Chúc mừng text */}
+        <div style={{
+          textAlign:'center', marginBottom:22,
+          padding:'12px 20px',
+          background:'linear-gradient(135deg, rgba(220,38,38,0.06), rgba(245,158,11,0.06))',
+          border:'1px solid rgba(245,158,11,0.1)',
+          borderRadius:14,
+        }}>
+          <p style={{ margin:0, fontSize:14, color:'rgba(255,255,255,0.55)', lineHeight:1.7, fontStyle:'italic' }}>
+            ✨ <span style={{ color:'rgba(255,255,255,0.8)', fontWeight:500 }}>Chúc các bạn chơi game vui vẻ!</span> ✨<br/>
+            <span style={{ fontSize:11.5, color:'rgba(255,255,255,0.35)' }}>Hãy thử thách bản thân qua 4 màn học thuật đặc sắc</span>
+          </p>
+        </div>
+
+        {/* Start button */}
+        <div style={{ textAlign:'center' }}>
+          <button
+            id="intro-start-btn"
+            onMouseEnter={() => setHovered(true)}
+            onMouseLeave={() => setHovered(false)}
+            onClick={() => { sfx.play('click'); onClose(); }}
+            style={{
+              position:'relative', overflow:'hidden',
+              background: hovered
+                ? 'linear-gradient(135deg, #f59e0b 0%, #dc2626 100%)'
+                : 'linear-gradient(135deg, #b45309 0%, #991b1b 100%)',
+              border:'none', borderRadius:14,
+              padding:'15px 56px',
+              fontSize:14, fontWeight:800, letterSpacing:4, textTransform:'uppercase',
+              color:'#fff', cursor:'pointer', fontFamily:"'Cinzel', serif",
+              transition:'all 0.3s cubic-bezier(0.16,1,0.3,1)',
+              transform: hovered ? 'translateY(-3px) scale(1.03)' : 'translateY(0) scale(1)',
+              boxShadow: hovered
+                ? '0 20px 50px rgba(245,158,11,0.45), 0 0 0 1px rgba(245,158,11,0.4)'
+                : '0 8px 24px rgba(0,0,0,0.6)',
+            }}
+          >
+            {/* Shimmer effect */}
+            {hovered && (
+              <div style={{
+                position:'absolute', inset:0,
+                background:'linear-gradient(105deg, transparent 30%, rgba(255,255,255,0.18) 50%, transparent 70%)',
+                backgroundSize:'200% 100%',
+                animation:'shimmerLine 0.7s linear',
+                pointerEvents:'none',
+              }} />
+            )}
+            ⚔️&nbsp; Bắt Đầu Chơi &nbsp;⚔️
+          </button>
+        </div>
+      </div>
     </div>
   );
 }
@@ -437,36 +645,226 @@ function WelcomeScreen({ onStart }) {
 }
 
 // ===========================================================================================
-// LEVEL 1 – CÔNG THÀNH CHIẾN
+// LEVEL 1 – CÔNG THÀNH CHIẾN (v2 – Castle Siege with FX)
 // ===========================================================================================
+const POWER_CORES = [
+  { id:'heart',  icon:'❤️',  label:'Hồi Sinh',    desc:'+1 HP cho bên ta',              color:'#ef4444', glowColor:'rgba(239,68,68,0.6)'  },
+  { id:'shield', icon:'🛡️',  label:'Khiên Thần',   desc:'Chắn 1 đòn địch tiếp theo',   color:'#3b82f6', glowColor:'rgba(59,130,246,0.6)' },
+  { id:'power',  icon:'⚡',  label:'Sấm Sét',      desc:'Lần công tiếp -2 HP địch',    color:'#a855f7', glowColor:'rgba(168,85,247,0.6)' },
+];
+
+function BombProjectile({ active, fromLeft, onEnd }) {
+  useEffect(() => {
+    if (!active) return;
+    const t = setTimeout(onEnd, 900);
+    return () => clearTimeout(t);
+  }, [active]);
+  if (!active) return null;
+  return (
+    <div style={{
+      position:'absolute', top:'50%', zIndex:50, pointerEvents:'none',
+      left: fromLeft ? '20%' : '75%',
+      '--bx': fromLeft ? '55vw' : '-55vw',
+      '--by': '-40px',
+      animation:'bombFly 0.8s cubic-bezier(.2,.8,.4,1) forwards',
+      fontSize:28,
+    }}>💣</div>
+  );
+}
+
+function ExplosionFX({ active, side }) {
+  if (!active) return null;
+  return (
+    <div style={{
+      position:'absolute', top:'30%',
+      [side === 'right' ? 'right' : 'left']: '8%',
+      zIndex:60, pointerEvents:'none',
+      animation:'explode 0.6s ease-out forwards',
+      fontSize:48,
+    }}>💥</div>
+  );
+}
+
+function CastleVisual({ hp, maxHp, label, side, isShaking, isExploding }) {
+  const pct = hp / maxHp;
+  const cracks = maxHp - hp;
+  const isLeft = side === 'left';
+  return (
+    <div style={{
+      display:'flex', flexDirection:'column',
+      alignItems: isLeft ? 'flex-start' : 'flex-end',
+      gap:8, position:'relative', flex:1,
+      padding:'12px 16px',
+    }}>
+      {/* Castle emoji with damage */}
+      <div style={{
+        position:'relative', display:'inline-block',
+        animation: isShaking ? 'castleShake 0.6s ease' : isExploding ? 'castleCrumble 0.5s ease forwards' : 'none',
+      }}>
+        <span style={{
+          fontSize:58,
+          filter: `brightness(${0.5 + pct*0.5}) drop-shadow(0 0 ${pct>0.6?12:6}px ${isLeft ? 'rgba(16,185,129,0.7)' : 'rgba(239,68,68,0.7)'})`
+        }}>{isLeft ? '🏯' : '🏰'}</span>
+        {/* Crack indicators */}
+        {cracks > 0 && Array.from({length: cracks}).map((_,i) => (
+          <span key={i} style={{
+            position:'absolute',
+            top: `${15 + i*18}%`,
+            left: isLeft ? `${60 + i*10}%` : `${-10 - i*10}%`,
+            fontSize:14, animation:'crackAppear 0.3s ease',
+            filter:'drop-shadow(0 0 4px rgba(239,68,68,0.8))'
+          }}>💢</span>
+        ))}
+      </div>
+
+      {/* Label & HP */}
+      <div style={{ textAlign: isLeft ? 'left' : 'right' }}>
+        <div style={{ fontSize:11, fontFamily:'monospace', letterSpacing:2, color:'rgba(255,255,255,0.45)', textTransform:'uppercase', fontWeight:600 }}>{label}</div>
+        <div style={{ fontSize:13, fontFamily:'monospace', color: isLeft ? '#10b981' : '#ef4444', fontWeight:700, marginTop:2 }}>HP: {hp} / {maxHp}</div>
+      </div>
+
+      {/* HP bar */}
+      <div style={{ width:'100%', background:'rgba(0,0,0,0.5)', borderRadius:999, height:10, overflow:'hidden', border:`1px solid ${isLeft ? '#10b98133' : '#ef444433'}` }}>
+        <div style={{
+          height:'100%', borderRadius:999, transition:'width 0.5s cubic-bezier(.4,0,.2,1)',
+          width:`${(hp/maxHp)*100}%`,
+          background: isLeft
+            ? 'linear-gradient(90deg, #10b981aa, #10b981)'
+            : 'linear-gradient(90deg, #ef4444aa, #ef4444)',
+          boxShadow: isLeft ? '0 0 10px #10b98177' : '0 0 10px #ef444477'
+        }} />
+      </div>
+    </div>
+  );
+}
+
+function CoreSelectOverlay({ onSelect }) {
+  const [hov, setHov] = useState(null);
+  return (
+    <div style={{
+      position:'fixed', inset:0, zIndex:200,
+      background:'rgba(0,0,0,0.88)',
+      display:'flex', alignItems:'center', justifyContent:'center',
+      backdropFilter:'blur(10px)',
+    }}>
+      <div style={{
+        background:'rgba(15,10,5,0.97)',
+        border:'1px solid rgba(245,158,11,0.35)',
+        borderRadius:28, padding:'36px 42px',
+        maxWidth:520, width:'90%',
+        animation:'overlayIn 0.35s cubic-bezier(.2,.8,.4,1) forwards',
+        boxShadow:'0 30px 80px rgba(0,0,0,0.9), 0 0 60px rgba(245,158,11,0.08)'
+      }}>
+        <div style={{ textAlign:'center', marginBottom:28 }}>
+          <div style={{ fontSize:36, marginBottom:10 }}>⚗️</div>
+          <h3 style={{
+            margin:0, fontSize:20, fontWeight:900, letterSpacing:3, textTransform:'uppercase',
+            background:'linear-gradient(135deg, #fcd34d, #f59e0b)',
+            WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text',
+            fontFamily:"'Cinzel', serif"
+          }}>Chọn Lõi Sức Mạnh</h3>
+          <p style={{ margin:'10px 0 0', fontSize:12, color:'rgba(255,255,255,0.4)', letterSpacing:1 }}>
+            Hoàn thành 3 câu — hãy chọn 1 lõi để tăng cường sức chiến đấu!
+          </p>
+        </div>
+        <div style={{ display:'flex', flexDirection:'column', gap:14 }}>
+          {POWER_CORES.map(core => (
+            <button key={core.id}
+              onMouseEnter={() => setHov(core.id)}
+              onMouseLeave={() => setHov(null)}
+              onClick={() => onSelect(core)}
+              style={{
+                background: hov===core.id ? `rgba(${core.id==='heart'?'239,68,68':core.id==='shield'?'59,130,246':'168,85,247'},0.15)` : 'rgba(255,255,255,0.03)',
+                border:`1px solid ${hov===core.id ? core.color : 'rgba(255,255,255,0.08)'}`,
+                borderRadius:16, padding:'16px 22px',
+                cursor:'pointer', transition:'all 0.25s', fontFamily:'inherit',
+                display:'flex', alignItems:'center', gap:18,
+                boxShadow: hov===core.id ? `0 0 20px ${core.glowColor}` : 'none',
+                transform: hov===core.id ? 'translateY(-2px) scale(1.01)' : 'none',
+              }}
+            >
+              <span className="core-float" style={{ '--core-color': core.color, fontSize:36, lineHeight:1 }}>{core.icon}</span>
+              <div style={{ textAlign:'left' }}>
+                <div style={{ fontSize:15, fontWeight:800, color: hov===core.id ? core.color : '#f1f5f9', letterSpacing:1 }}>{core.label}</div>
+                <div style={{ fontSize:12, color:'rgba(255,255,255,0.45)', marginTop:4 }}>{core.desc}</div>
+              </div>
+              {hov===core.id && <div style={{ marginLeft:'auto', color:core.color, fontSize:20 }}>➤</div>}
+            </button>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function Level1({ onWin, onLose, lives, setLives }) {
-  const [questions]           = useState(() => pickQuestions(ALL_Q1, 8)); // 8 câu ngẫu nhiên mỗi lượt
-  const [eHp, setEHp]         = useState(5);
-  const [pHp, setPHp]         = useState(5);
-  const [qIdx, setQIdx]       = useState(0);
-  const [sel, setSel]         = useState(null);
+  const [questions]             = useState(() => shuffle([...ALL_Q1]).slice(0, 12));
+  const [eHp, setEHp]           = useState(5);
+  const [pHp, setPHp]           = useState(5);
+  const [qIdx, setQIdx]         = useState(0);
+  const [sel, setSel]           = useState(null);
   const [answered, setAnswered] = useState(false);
-  const [shake, setShake]     = useState('');
+  const [castleShake, setCastleShake] = useState(''); // 'enemy' | 'player'
+  const [bomb, setBomb]         = useState(null); // { fromLeft: bool }
+  const [explosion, setExplosion] = useState(null); // 'right' | 'left'
+  const [showCoreSelect, setShowCoreSelect] = useState(false);
+  const [activeCore, setActiveCore] = useState(null); // current buffed core
+  const [shieldActive, setShieldActive] = useState(false);
+  const [powerBonus, setPowerBonus] = useState(false); // next correct hit = -2
+  const [dmgFloat, setDmgFloat] = useState(null); // { text, side }
+  const answeredRef = useRef(false);
 
   const q = questions[qIdx % questions.length];
 
+  const triggerBomb = (fromLeft, targetSide, onHit) => {
+    setBomb({ fromLeft });
+    setTimeout(() => {
+      setBomb(null);
+      setExplosion(targetSide);
+      onHit();
+      setTimeout(() => setExplosion(null), 600);
+    }, 800);
+  };
+
   const confirm = () => {
-    if (sel === null || answered) return;
+    if (sel === null || answered || answeredRef.current) return;
+    answeredRef.current = true;
     sfx.play('click');
     setAnswered(true);
+
     if (sel === q.ans) {
       sfx.play('correct');
-      const next = Math.max(0, eHp - 1);
-      setEHp(next);
-      setShake('enemy');
-      setTimeout(() => setShake(''), 500);
-      if (next <= 0) setTimeout(() => onWin(500), 900);
+      const dmg = powerBonus ? 2 : 1;
+      setPowerBonus(false);
+      triggerBomb(true, 'right', () => {
+        setCastleShake('enemy');
+        setTimeout(() => setCastleShake(''), 700);
+        setDmgFloat({ text: `-${dmg} HP`, side: 'right' });
+        setTimeout(() => setDmgFloat(null), 1200);
+        setEHp(prev => {
+          const next = Math.max(0, prev - dmg);
+          if (next <= 0) setTimeout(() => onWin(500), 900);
+          return next;
+        });
+      });
     } else {
       sfx.play('wrong');
-      const next = Math.max(0, pHp - 1);
-      setPHp(next);
-      setShake('player');
-      setTimeout(() => setShake(''), 500);
+      if (shieldActive) {
+        setShieldActive(false);
+        setDmgFloat({ text: '🛡️ CHẶN!', side: 'left' });
+        setTimeout(() => setDmgFloat(null), 1200);
+        triggerBomb(false, 'left', () => {
+          setCastleShake('player'); setTimeout(() => setCastleShake(''), 700);
+        });
+      } else {
+        triggerBomb(false, 'left', () => {
+          setCastleShake('player');
+          setTimeout(() => setCastleShake(''), 700);
+          setDmgFloat({ text: '-1 HP', side: 'left' });
+          setTimeout(() => setDmgFloat(null), 1200);
+          setPHp(prev => Math.max(0, prev - 1));
+        });
+      }
     }
   };
 
@@ -475,121 +873,172 @@ function Level1({ onWin, onLose, lives, setLives }) {
       setLives(prev => {
         const nxt = prev - 1;
         if (nxt <= 0) { onLose(); return 0; }
-        setPHp(5); setSel(null); setAnswered(false);
+        setPHp(5); setSel(null); setAnswered(false); answeredRef.current = false;
         setQIdx(i => i + 1);
         return nxt;
       });
       return;
     }
-    // Nếu hết bộ câu hỏi → reload bộ mới (câu còn lại) rồi tiếp
-    setSel(null); setAnswered(false);
+    setSel(null); setAnswered(false); answeredRef.current = false;
     const nextIdx = qIdx + 1;
-    // Khi đã thắng địch (eHp=0) thì onWin đã gọi, không cần setQIdx
     setQIdx(nextIdx);
+    // Every 3 questions → show core select
+    if ((nextIdx) % 3 === 0 && nextIdx < questions.length) {
+      setTimeout(() => setShowCoreSelect(true), 200);
+    }
+  };
+
+  const handleCoreSelect = (core) => {
+    sfx.play('correct');
+    setActiveCore(core);
+    setShowCoreSelect(false);
+    if (core.id === 'heart')  setPHp(p => Math.min(5, p + 1));
+    if (core.id === 'shield') setShieldActive(true);
+    if (core.id === 'power')  setPowerBonus(true);
   };
 
   return (
     <div style={S.screen}>
-      {/* Battle arena */}
+      {showCoreSelect && <CoreSelectOverlay onSelect={handleCoreSelect} />}
+
+      {/* Battle Arena */}
       <div style={{
-        display:'grid', gridTemplateColumns:'1fr 60px 1fr', gap:16, alignItems:'center',
-        background:'rgba(0,0,0,0.4)', border:'1px solid rgba(255,255,255,0.05)',
-        borderRadius:20, padding:'20px 24px'
+        display:'grid', gridTemplateColumns:'1fr 80px 1fr', gap:8, alignItems:'center',
+        background:'rgba(0,0,0,0.45)', border:'1px solid rgba(255,255,255,0.06)',
+        borderRadius:22, padding:'18px 20px', position:'relative', overflow:'visible'
       }}>
-        {/* Player */}
-        <CombatantCard
-          emoji="🛡️" label="Lực Lượng Ta" hp={pHp} maxHp={5}
-          color="#10b981" shade="rgba(16,185,129,0.15)"
-          shake={shake === 'player'} flashDmg={shake === 'player'}
-        />
-        <div style={{ textAlign:'center', color:'rgba(255,255,255,0.15)', fontSize:28, fontWeight:900 }}>VS</div>
-        {/* Enemy */}
-        <CombatantCard
-          emoji="🏰" label="Thành Trì Địch" hp={eHp} maxHp={5}
-          color="#ef4444" shade="rgba(239,68,68,0.15)"
-          shake={shake === 'enemy'} flashDmg={shake === 'enemy'}
-          reverse
-        />
+        {/* Bomb projectile */}
+        <BombProjectile active={!!bomb} fromLeft={bomb?.fromLeft} onEnd={() => setBomb(null)} />
+
+        {/* Floating dmg indicator */}
+        {dmgFloat && (
+          <div style={{
+            position:'absolute',
+            top:'10%',
+            [dmgFloat.side==='right' ? 'right' : 'left']: '5%',
+            zIndex:70, pointerEvents:'none',
+            fontSize:18, fontWeight:900,
+            color: dmgFloat.text.includes('CHẶN') ? '#3b82f6' : dmgFloat.side==='right' ? '#ef4444' : '#fbbf24',
+            textShadow:'0 0 12px currentColor',
+            animation:'fadeUp 0.5s ease forwards',
+          }}>{dmgFloat.text}</div>
+        )}
+
+        {/* Player Castle (our side) */}
+        <div style={{ position:'relative' }}>
+          <ExplosionFX active={explosion==='left'} side="left" />
+          <CastleVisual
+            hp={pHp} maxHp={5} label="Thành Ta"
+            side="left"
+            isShaking={castleShake==='player'}
+            isExploding={false}
+          />
+        </div>
+
+        {/* VS + Status */}
+        <div style={{ textAlign:'center', display:'flex', flexDirection:'column', gap:6, alignItems:'center' }}>
+          <div style={{ color:'rgba(255,255,255,0.15)', fontSize:22, fontWeight:900 }}>VS</div>
+          {shieldActive && <div style={{ fontSize:18, filter:'drop-shadow(0 0 8px rgba(59,130,246,0.9))' }} title="Khiên đang hoạt động">🛡️</div>}
+          {powerBonus && <div style={{ fontSize:18, filter:'drop-shadow(0 0 8px rgba(168,85,247,0.9))' }} title="Công gấp đôi lần tới">⚡</div>}
+          {activeCore && !shieldActive && !powerBonus && <div style={{ fontSize:14, opacity:0.4 }}>{activeCore.icon}</div>}
+        </div>
+
+        {/* Enemy Castle */}
+        <div style={{ position:'relative' }}>
+          <ExplosionFX active={explosion==='right'} side="right" />
+          <CastleVisual
+            hp={eHp} maxHp={5} label="Thành Địch"
+            side="right"
+            isShaking={castleShake==='enemy'}
+            isExploding={eHp<=0}
+          />
+        </div>
       </div>
+
+      {/* Active core badge */}
+      {activeCore && (
+        <div style={{
+          display:'flex', alignItems:'center', gap:10,
+          background:'rgba(255,255,255,0.03)', border:`1px solid ${activeCore.color}44`,
+          borderRadius:12, padding:'8px 16px', fontSize:12, color:'rgba(255,255,255,0.5)',
+          alignSelf:'flex-start'
+        }}>
+          <span>{activeCore.icon}</span>
+          <span style={{ color: activeCore.color, fontWeight:700 }}>{activeCore.label}</span>
+          <span>đang kích hoạt</span>
+          {shieldActive && <span style={{ color:'#3b82f6' }}>• Khiên chờ sẵn</span>}
+          {powerBonus && <span style={{ color:'#a855f7' }}>• Công tiếp -2 HP</span>}
+        </div>
+      )}
 
       {/* ── Quote Banner ── */}
       <div style={{
         position:'relative',
         background:'linear-gradient(160deg, #e8d5aa 0%, #d9c08a 40%, #c9ac6e 100%)',
-        borderRadius:18,
-        padding:'1.6rem 2.8rem',
-        textAlign:'center',
-        boxShadow:'0 6px 28px rgba(0,0,0,0.55), inset 0 1px 0 rgba(255,255,255,0.35), inset 0 -2px 0 rgba(0,0,0,0.15)',
-        border:'1px solid rgba(160,120,50,0.6)',
-        overflow:'hidden'
+        borderRadius:18, padding:'1.4rem 2.4rem', textAlign:'center',
+        boxShadow:'0 6px 28px rgba(0,0,0,0.55), inset 0 1px 0 rgba(255,255,255,0.35)',
+        border:'1px solid rgba(160,120,50,0.6)', overflow:'hidden'
       }}>
-        {/* Decorative edge lines */}
         <div style={{ position:'absolute', top:10, left:18, right:18, height:1, background:'rgba(100,65,20,0.25)' }} />
         <div style={{ position:'absolute', bottom:10, left:18, right:18, height:1, background:'rgba(100,65,20,0.25)' }} />
-        {/* Corner ornaments */}
-        <span style={{ position:'absolute', top:5, left:10,  fontSize:13, opacity:0.35, color:'#4a2e0a' }}>✦</span>
-        <span style={{ position:'absolute', top:5, right:10, fontSize:13, opacity:0.35, color:'#4a2e0a' }}>✦</span>
-        <span style={{ position:'absolute', bottom:5, left:10,  fontSize:13, opacity:0.35, color:'#4a2e0a' }}>✦</span>
-        <span style={{ position:'absolute', bottom:5, right:10, fontSize:13, opacity:0.35, color:'#4a2e0a' }}>✦</span>
-        <p style={{
-          margin:0, fontSize:15, fontWeight:700, lineHeight:1.85,
-          color:'#2c1e10',
-          fontFamily:"Georgia, 'Times New Roman', serif",
-          textTransform:'uppercase', letterSpacing:2,
+        <span style={{ position:'absolute', top:5, left:10,  fontSize:12, opacity:0.35, color:'#4a2e0a' }}>✦</span>
+        <span style={{ position:'absolute', top:5, right:10, fontSize:12, opacity:0.35, color:'#4a2e0a' }}>✦</span>
+        <span style={{ position:'absolute', bottom:5, left:10,  fontSize:12, opacity:0.35, color:'#4a2e0a' }}>✦</span>
+        <span style={{ position:'absolute', bottom:5, right:10, fontSize:12, opacity:0.35, color:'#4a2e0a' }}>✦</span>
+        <p style={{ margin:0, fontSize:14, fontWeight:700, lineHeight:1.8, color:'#2c1e10',
+          fontFamily:"Georgia, 'Times New Roman', serif", textTransform:'uppercase', letterSpacing:2,
           textShadow:'0 1px 0 rgba(255,255,255,0.4)'
         }}>
           &ldquo;Đoàn kết, đoàn kết, đại đoàn kết.<br/>
           Thành công, thành công, đại thành công.&rdquo;
         </p>
-        <div style={{ marginTop:10, fontSize:11, color:'#5a3a10', fontFamily:"Georgia, serif", fontStyle:'italic', opacity:0.75 }}>
-          — Hồ Chí Minh
-        </div>
+        <div style={{ marginTop:8, fontSize:11, color:'#5a3a10', fontFamily:"Georgia, serif", fontStyle:'italic', opacity:0.75 }}>— Hồ Chí Minh</div>
       </div>
 
       {/* Question */}
-      {eHp > 0 && pHp > 0 && (
-        <div style={{ display:'flex', flexDirection:'column', gap:16 }}>
-          <div style={{
-            ...S.cardDark, padding:'20px 26px', position:'relative'
-          }}>
+      {(eHp > 0 || answered) && (pHp > 0 || answered) && (
+        <div style={{ display:'flex', flexDirection:'column', gap:14 }}>
+          <div style={{ ...S.cardDark, padding:'18px 24px', position:'relative' }}>
             <div style={{ position:'absolute', top:12, right:14, fontSize:10, color:S.gold, fontFamily:'monospace', letterSpacing:2, background:'rgba(245,158,11,0.1)', border:'1px solid rgba(245,158,11,0.2)', padding:'4px 12px', borderRadius:8 }}>
               CÂU {(qIdx % questions.length) + 1} / {questions.length}
             </div>
-            <p style={{ margin:0, fontSize:16, fontWeight:700, color:'#ffffff', lineHeight:1.7, paddingRight:90 }}>
+            {/* Core pick hint every 3 */}
+            {((qIdx+1) % 3 === 0) && (qIdx+1) < questions.length && !answered && (
+              <div style={{ position:'absolute', top:12, left:14, fontSize:10, color:'#a855f7', fontFamily:'monospace', background:'rgba(168,85,247,0.1)', border:'1px solid rgba(168,85,247,0.25)', padding:'4px 10px', borderRadius:8 }}>⚗️ Sau câu này: chọn lõi!</div>
+            )}
+            <p style={{ margin:0, fontSize:15, fontWeight:700, color:'#ffffff', lineHeight:1.7, paddingRight:90, paddingTop: ((qIdx+1)%3===0 && (qIdx+1)<questions.length && !answered) ? 22 : 0 }}>
               {q.q}
             </p>
           </div>
 
-          <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:12 }}>
+          <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:10 }}>
             {q.opts.map((opt, i) => {
               let bg = 'rgba(255,255,255,0.03)';
               let border = 'rgba(255,255,255,0.08)';
               let color = 'rgba(255,255,255,0.7)';
               if (sel === i && !answered) { bg='rgba(245,158,11,0.1)'; border=S.gold; color=S.gold; }
               if (answered) {
-                if (i === q.ans)      { bg='rgba(16,185,129,0.12)'; border='#10b981'; color='#10b981'; }
-                else if (sel === i)   { bg='rgba(239,68,68,0.1)'; border='#ef4444'; color='#ef4444'; }
-                else                  { bg='transparent'; border='rgba(255,255,255,0.04)'; color='rgba(255,255,255,0.2)'; }
+                if (i === q.ans)    { bg='rgba(16,185,129,0.12)'; border='#10b981'; color='#10b981'; }
+                else if (sel === i) { bg='rgba(239,68,68,0.1)';  border='#ef4444'; color='#ef4444'; }
+                else                { bg='transparent'; border='rgba(255,255,255,0.04)'; color='rgba(255,255,255,0.2)'; }
               }
               return (
                 <button key={i} disabled={answered} onClick={() => { sfx.play('click'); setSel(i); }}
                   style={{
                     background:bg, border:`1px solid ${border}`, borderRadius:14,
-                    padding:'16px 18px', textAlign:'left', fontSize:14, color, cursor: answered ? 'default' : 'pointer',
-                    display:'flex', gap:14, alignItems:'flex-start', lineHeight:1.55,
+                    padding:'14px 16px', textAlign:'left', fontSize:13, color, cursor: answered ? 'default' : 'pointer',
+                    display:'flex', gap:12, alignItems:'flex-start', lineHeight:1.5,
                     transition:'all 0.2s', fontFamily:'inherit',
                   }}
-                  onMouseEnter={e => { if (!answered && sel !== i) e.currentTarget.style.borderColor = 'rgba(245,158,11,0.4)'; }}
-                  onMouseLeave={e => { if (!answered && sel !== i) e.currentTarget.style.borderColor = 'rgba(255,255,255,0.08)'; }}
+                  onMouseEnter={e => { if (!answered && sel !== i) e.currentTarget.style.borderColor='rgba(245,158,11,0.4)'; }}
+                  onMouseLeave={e => { if (!answered && sel !== i) e.currentTarget.style.borderColor='rgba(255,255,255,0.08)'; }}
                 >
                   <span style={{
-                    minWidth:26, height:26, borderRadius:8, display:'flex', alignItems:'center', justifyContent:'center',
-                    fontSize:12, fontWeight:700, border:`1px solid ${border}`,
-                    background: sel === i && !answered ? S.gold : 'rgba(255,255,255,0.05)',
-                    color: sel === i && !answered ? '#0a0a0a' : 'inherit', flexShrink:0
-                  }}>
-                    {String.fromCharCode(65+i)}
-                  </span>
+                    minWidth:24, height:24, borderRadius:7, display:'flex', alignItems:'center', justifyContent:'center',
+                    fontSize:11, fontWeight:700, border:`1px solid ${border}`,
+                    background: sel===i && !answered ? S.gold : 'rgba(255,255,255,0.05)',
+                    color: sel===i && !answered ? '#0a0a0a' : 'inherit', flexShrink:0
+                  }}>{String.fromCharCode(65+i)}</span>
                   {opt}
                 </button>
               );
@@ -598,27 +1047,30 @@ function Level1({ onWin, onLose, lives, setLives }) {
 
           {!answered ? (
             <div style={{ display:'flex', justifyContent:'flex-end' }}>
-              <GlowButton onClick={confirm} disabled={sel === null} color="#ef4444"
-                style={{ opacity: sel === null ? 0.4 : 1, cursor: sel === null ? 'not-allowed' : 'pointer', fontSize:14, padding:'15px 36px' }}>
+              <GlowButton onClick={confirm} disabled={sel===null} color="#ef4444"
+                style={{ opacity: sel===null ? 0.4 : 1, cursor: sel===null ? 'not-allowed' : 'pointer', fontSize:13, padding:'14px 34px' }}>
                 💥 Công Phá Thành Lũy
               </GlowButton>
             </div>
           ) : (
             <div style={{
-              ...S.cardDark, padding:'18px 22px',
-              display:'flex', gap:16, alignItems:'flex-start',
+              ...S.cardDark, padding:'16px 20px',
+              display:'flex', gap:14, alignItems:'flex-start',
               animation:'fadeUp 0.3s ease forwards'
             }}>
-              <span style={{ fontSize:26, flexShrink:0 }}>{sel === q.ans ? '🌱' : '💡'}</span>
+              <span style={{ fontSize:24, flexShrink:0 }}>{sel===q.ans ? '🌱' : '💡'}</span>
               <div style={{ flex:1 }}>
-                <div style={{ fontSize:12, fontWeight:700, color: sel === q.ans ? S.emerald : S.red, marginBottom:6, letterSpacing:1, textTransform:'uppercase' }}>
-                  {sel === q.ans ? 'Tấn công thành công!' : 'Bị địch phản công!'}
+                <div style={{ fontSize:11, fontWeight:700, color: sel===q.ans ? S.emerald : S.red, marginBottom:5, letterSpacing:1, textTransform:'uppercase' }}>
+                  {sel===q.ans
+                    ? (powerBonus ? '⚡ Sấm Sét! Công -2 HP địch!' : '💣 Ném bom thành công!')
+                    : (shieldActive ? '🛡️ Khiên đã chặn đòn địch!' : '🔥 Địch phản kích!')
+                  }
                 </div>
-                <p style={{ margin:0, fontSize:13, color:'rgba(255,255,255,0.65)', lineHeight:1.75 }}>{q.exp}</p>
+                <p style={{ margin:0, fontSize:12, color:'rgba(255,255,255,0.6)', lineHeight:1.7 }}>{q.exp}</p>
               </div>
               <button onClick={next} style={{
                 background:'linear-gradient(135deg, #10b981, #059669)', color:'#fff', border:'none',
-                borderRadius:12, padding:'12px 22px', fontSize:12, fontWeight:700, cursor:'pointer',
+                borderRadius:12, padding:'10px 20px', fontSize:11, fontWeight:700, cursor:'pointer',
                 letterSpacing:2, whiteSpace:'nowrap', fontFamily:'inherit'
               }}>TIẾP TỤC ➔</button>
             </div>
@@ -630,17 +1082,27 @@ function Level1({ onWin, onLose, lives, setLives }) {
 }
 
 // ===========================================================================================
-// LEVEL 2 – DÒNG THỜI GIAN
+// LEVEL 2 – DÒNG THỜI GIAN (v2 - Constellation Path)
 // ===========================================================================================
+const STAR_POSITIONS = [
+  { top: '15%', left: '12%' },
+  { top: '65%', left: '28%' },
+  { top: '25%', left: '55%' },
+  { top: '75%', left: '72%' },
+  { top: '35%', left: '88%' }
+];
+
 function Level2({ onWin, onLose, lives, setLives }) {
-  // Mỗi lượt chơi lấy 5 sự kiện ngẫu nhiên từ 11 mốc lịch sử
   const [correctOrder]        = useState(() => pickTimeline());
-  const [pool, setPool]       = useState(() => shuffle([...correctOrder]));
+  const [pool, setPool]       = useState(() => {
+    const shuffled = shuffle([...correctOrder]);
+    return shuffled.map((ev, i) => ({ ...ev, pos: STAR_POSITIONS[i] }));
+  });
   const [ordered, setOrdered] = useState([]);
   const [wrong, setWrong]     = useState(false);
 
   const pick = (ev) => {
-    if (wrong) return;
+    if (wrong || ordered.find(o => o.id === ev.id)) return;
     sfx.play('click');
     const remaining = pool.filter(e => !ordered.find(o => o.id === e.id));
     const minYear = Math.min(...remaining.map(e => e.year));
@@ -650,7 +1112,7 @@ function Level2({ onWin, onLose, lives, setLives }) {
       setOrdered(next);
       if (next.length === correctOrder.length) {
         sfx.play('correct');
-        setTimeout(() => onWin(600), 700);
+        setTimeout(() => onWin(600), 1500); // Đợi laser bay xong
       }
     } else {
       sfx.play('wrong');
@@ -661,153 +1123,192 @@ function Level2({ onWin, onLose, lives, setLives }) {
         return nxt;
       });
       setTimeout(() => {
-        // Tạo một bộ mới 5 sự kiện ngẫu nhiên khác khi bị phạt
         const newSet = pickTimeline();
-        setPool(shuffle([...newSet]));
+        const shuffled = shuffle([...newSet]);
+        setPool(shuffled.map((e, i) => ({ ...e, pos: STAR_POSITIONS[i] })));
         setOrdered([]);
         setWrong(false);
       }, 1400);
     }
   };
 
-  const available = pool.filter(e => !ordered.find(o => o.id === e.id));
-
   return (
     <div style={S.screen}>
-      <div style={{ textAlign:'center' }}>
+      <div style={{ textAlign:'center', marginBottom:10 }}>
         <h3 style={{ margin:0, fontSize:17, fontWeight:800, color:S.gold, letterSpacing:3, textTransform:'uppercase' }}>
-          ⏳ Dòng Thời Gian Lịch Sử
+          ✨ Chòm Sao Lịch Sử
         </h3>
         <p style={{ margin:'6px 0 0', fontSize:12, color:'rgba(255,255,255,0.4)' }}>
-          Nhấp chọn sự kiện cổ xưa nhất còn lại – lần lượt từ trước đến sau.
+          Kết nối các mốc son từ cổ xưa đến hiện đại để thắp sáng con đường Cách mạng.
         </p>
       </div>
 
-      <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:16 }}>
-        {/* Hộp sự kiện chờ */}
-        <div style={{ ...S.cardDark, padding:'18px', display:'flex', flexDirection:'column', gap:10 }}>
-          <div style={{ fontSize:10, fontFamily:'monospace', letterSpacing:2, color:S.gold, borderBottom:'1px solid rgba(255,255,255,0.06)', paddingBottom:8, marginBottom:4 }}>
-            📥 SỰ KIỆN CHƯA SẮP XẾP
-          </div>
-          {available.length === 0 && ordered.length === TIMELINE.length ? (
-            <div style={{ textAlign:'center', color:S.emerald, fontSize:13, fontWeight:700, padding:24 }}>
-              ✨ Hoàn thành! Đang chuyển màn...
-            </div>
-          ) : (
-            available.map(ev => (
-              <button key={ev.id} onClick={() => pick(ev)} disabled={wrong}
-                className={wrong ? 'shake' : ''}
-                style={{
-                  background:'rgba(255,255,255,0.03)', border:'1px solid rgba(255,255,255,0.08)',
-                  borderRadius:12, padding:'12px 14px', textAlign:'left', fontSize:12,
-                  color:'rgba(255,255,255,0.7)', cursor: wrong ? 'not-allowed' : 'pointer',
-                  display:'flex', gap:10, alignItems:'flex-start', lineHeight:1.5,
-                  transition:'all 0.2s', fontFamily:'inherit'
-                }}
-                onMouseEnter={e => { if(!wrong) { e.currentTarget.style.borderColor='rgba(245,158,11,0.4)'; e.currentTarget.style.color='#fff'; }}}
-                onMouseLeave={e => { e.currentTarget.style.borderColor='rgba(255,255,255,0.08)'; e.currentTarget.style.color='rgba(255,255,255,0.7)'; }}
-              >
-                <span style={{ color:S.gold, marginTop:1 }}>◆</span>
-                {ev.text}
-              </button>
-            ))
-          )}
-        </div>
+      <div className={wrong ? 'bg-flash-red' : ''} style={{
+        ...S.cardDark, position:'relative', height: 420, overflow:'hidden',
+        background:'radial-gradient(ellipse at center, rgba(15,20,35,0.8) 0%, rgba(5,10,15,0.95) 100%)',
+        border:'1px solid rgba(255,255,255,0.05)'
+      }}>
+        {/* Background stars */}
+        <div style={{ position:'absolute', inset:0, background:'url("data:image/svg+xml,%3Csvg width=\'100\' height=\'100\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Ccircle cx=\'20\' cy=\'20\' r=\'1\' fill=\'rgba(255,255,255,0.1)\'/%3E%3Ccircle cx=\'70\' cy=\'60\' r=\'1.5\' fill=\'rgba(255,255,255,0.15)\'/%3E%3C/svg%3E")', opacity:0.6 }} />
 
-        {/* Hộp thứ tự đã sắp */}
-        <div style={{ ...S.cardDark, padding:'18px', display:'flex', flexDirection:'column', gap:10, position:'relative', minHeight:200 }}>
-          <div style={{ fontSize:10, fontFamily:'monospace', letterSpacing:2, color:S.emerald, borderBottom:'1px solid rgba(255,255,255,0.06)', paddingBottom:8, marginBottom:4 }}>
-            📤 THỨ TỰ ĐÃ SẮP XẾP
-          </div>
-          {ordered.length === 0 ? (
-            <div style={{ flex:1, display:'flex', alignItems:'center', justifyContent:'center', color:'rgba(255,255,255,0.15)', fontSize:12, flexDirection:'column', gap:8 }}>
-              <span style={{ fontSize:28 }}>⏳</span>
-              Chọn sự kiện bên trái để bắt đầu
-            </div>
-          ) : (
-            ordered.map((ev, i) => (
-              <div key={ev.id} style={{
-                background:'rgba(16,185,129,0.1)', border:'1px solid rgba(16,185,129,0.3)',
-                borderRadius:12, padding:'10px 14px', display:'flex', alignItems:'center',
-                gap:12, fontSize:12, color:S.emerald, animation:'fadeUp 0.3s ease'
+        {/* Laser Connections */}
+        <svg style={{ position:'absolute', inset:0, width:'100%', height:'100%', pointerEvents:'none', zIndex:1 }}>
+          {ordered.map((ev, i) => {
+            if (i === 0) return null;
+            const prev = ordered[i-1];
+            return (
+              <line key={ev.id}
+                x1={prev.pos.left} y1={prev.pos.top}
+                x2={ev.pos.left} y2={ev.pos.top}
+                stroke={wrong ? '#ef4444' : '#10b981'} strokeWidth="2"
+                strokeDasharray="100" className={wrong ? 'shake' : 'laser-line'}
+                style={{ filter: wrong ? 'drop-shadow(0 0 6px #ef4444)' : 'drop-shadow(0 0 6px #10b981)' }}
+              />
+            );
+          })}
+        </svg>
+
+        {/* Interactive Stars */}
+        {pool.map((ev, i) => {
+          const isSelected = ordered.find(o => o.id === ev.id);
+          const isLast = ordered[ordered.length-1]?.id === ev.id;
+          return (
+            <div key={ev.id}
+              onClick={() => pick(ev)}
+              className={!isSelected ? 'star-twinkle' : ''}
+              style={{
+                position:'absolute', top: ev.pos.top, left: ev.pos.left,
+                transform:'translate(-50%, -50%)', zIndex:10,
+                display:'flex', flexDirection:'column', alignItems:'center', gap:8,
+                cursor: isSelected || wrong ? 'default' : 'pointer',
+                opacity: (wrong && !isSelected) ? 0.3 : 1,
+                transition:'all 0.3s'
+              }}
+            >
+              {/* Star Core */}
+              <div style={{
+                width: isSelected ? 24 : 16, height: isSelected ? 24 : 16,
+                background: isSelected ? S.emerald : 'rgba(255,255,255,0.8)',
+                borderRadius:'50%',
+                boxShadow: isSelected ? '0 0 20px #10b981, 0 0 40px #10b981' : '0 0 10px rgba(255,255,255,0.5)',
+                display:'flex', alignItems:'center', justifyContent:'center',
+                transition:'all 0.3s',
+                border: isSelected ? '2px solid #fff' : 'none'
               }}>
-                <span style={{
-                  minWidth:24, height:24, background:S.emerald, borderRadius:6,
-                  display:'flex', alignItems:'center', justifyContent:'center',
-                  fontSize:10, fontWeight:800, color:'#0a0a0a', flexShrink:0
-                }}>{i+1}</span>
-                <span style={{ flex:1, lineHeight:1.5 }}>{ev.text}</span>
-                <span style={{
-                  fontSize:11, fontFamily:'monospace', fontWeight:700,
-                  background:'rgba(16,185,129,0.2)', padding:'2px 8px', borderRadius:6
-                }}>{ev.year}</span>
+                {isSelected && <span style={{ fontSize:10, color:'#000', fontWeight:900 }}>✓</span>}
               </div>
-            ))
-          )}
 
-          {wrong && (
-            <div style={{
-              position:'absolute', inset:0, background:'rgba(30,0,0,0.92)',
-              border:'1px solid rgba(239,68,68,0.4)', borderRadius:18,
-              display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center',
-              gap:8, backdropFilter:'blur(8px)'
-            }}>
-              <span style={{ fontSize:28 }}>⚠️</span>
-              <span style={{ fontSize:12, fontWeight:700, color:S.red, letterSpacing:2, textTransform:'uppercase' }}>Sai niên đại! Đặt lại...</span>
+              {/* Event Text Card */}
+              <div style={{
+                background: isSelected ? 'rgba(16,185,129,0.15)' : 'rgba(0,0,0,0.6)',
+                border: isSelected ? '1px solid rgba(16,185,129,0.4)' : '1px solid rgba(255,255,255,0.1)',
+                backdropFilter:'blur(4px)', borderRadius:8,
+                padding:'6px 10px', width:140, textAlign:'center',
+                color: isSelected ? '#fff' : 'rgba(255,255,255,0.7)',
+                fontSize:11, lineHeight:1.4, pointerEvents:'none',
+                transform: isLast ? 'scale(1.05)' : 'scale(1)', transition:'transform 0.2s',
+                boxShadow: isSelected ? '0 4px 12px rgba(16,185,129,0.2)' : 'none'
+              }}>
+                {isSelected && <div style={{ color:S.emerald, fontWeight:900, fontSize:10, marginBottom:2 }}>{ev.year}</div>}
+                {ev.text}
+              </div>
             </div>
-          )}
-        </div>
+          );
+        })}
+
+        {/* Error Overlay */}
+        {wrong && (
+          <div style={{ position:'absolute', inset:0, zIndex:50, display:'flex', alignItems:'center', justifyContent:'center', background:'rgba(239,68,68,0.1)' }}>
+            <div className="shake" style={{ background:'rgba(15,5,5,0.9)', border:'1px solid #ef4444', padding:'16px 32px', borderRadius:16, color:'#ef4444', fontWeight:800, fontSize:16, letterSpacing:2, textTransform:'uppercase', boxShadow:'0 0 30px rgba(239,68,68,0.5)' }}>
+              ⚡ Gãy Liên Kết Thời Gian!
+            </div>
+          </div>
+        )}
+      </div>
+
+      {/* Progress Footer */}
+      <div style={{ display:'flex', justifyContent:'center', gap:8, marginTop:8 }}>
+        {correctOrder.map((_, i) => (
+          <div key={i} style={{
+            width:30, height:6, borderRadius:3,
+            background: i < ordered.length ? S.emerald : 'rgba(255,255,255,0.1)',
+            boxShadow: i < ordered.length ? '0 0 8px #10b981' : 'none',
+            transition:'all 0.3s'
+          }} />
+        ))}
       </div>
     </div>
   );
 }
 
 // ===========================================================================================
-// LEVEL 3 – LẮP GHÉP CHÂN LÝ
+// LEVEL 3 – LẮP GHÉP CHÂN LÝ (v2 - Energy Forge)
 // ===========================================================================================
 function Level3({ onWin, onLose, lives, setLives }) {
-  // Chọn ngẫu nhiên 1 bộ lắp ghép trong 3 bộ có sẵn
   const [puzzle]              = useState(() => ALL_PUZZLES[Math.floor(Math.random() * ALL_PUZZLES.length)]);
   const blankKeys = ['b0','b1','b2','b3'];
   const [answers, setAnswers] = useState({ b0:'', b1:'', b2:'', b3:'' });
   const [activeBl, setActiveBl] = useState(null);
-  const [wrong, setWrong]     = useState(false);
-  const [done, setDone]       = useState(false);
+  const [status, setStatus]   = useState('idle'); // 'idle' | 'checking' | 'wrong' | 'done'
 
-  const pickBlank = (key) => { sfx.play('click'); setActiveBl(key); };
-  const pickWord  = (word) => {
-    if (!activeBl || done) return;
-    sfx.play('click');
-    setAnswers(a => ({ ...a, [activeBl]: word }));
-    setActiveBl(null);
-  };
-  const clearBlank = (key, e) => {
-    e.stopPropagation();
-    sfx.play('click');
-    setAnswers(a => ({ ...a, [key]: '' }));
-  };
+  // Kích hoạt quét tự động khi điền đủ
+  useEffect(() => {
+    const isFull = blankKeys.every(k => answers[k] !== '');
+    if (isFull && status === 'idle') {
+      setStatus('checking');
+      sfx.play('click');
+      setTimeout(() => verify(), 800); // Giả lập tia sáng quét
+    }
+  }, [answers, status]);
 
-  const check = () => {
-    const ok = blankKeys.every(k => answers[k] === puzzle.blanks[k]);
-    if (ok) {
-      sfx.play('correct'); setDone(true);
-      setTimeout(() => onWin(700), 1200);
+  const verify = () => {
+    const wrongKeys = blankKeys.filter(k => answers[k] !== puzzle.blanks[k]);
+    if (wrongKeys.length === 0) {
+      sfx.play('correct');
+      setStatus('done');
+      setTimeout(() => onWin(700), 1800);
     } else {
-      sfx.play('wrong'); setWrong(true);
+      sfx.play('wrong');
+      setStatus('wrong');
       setLives(prev => {
         const nxt = prev - 1;
         if (nxt <= 0) { onLose(); return 0; }
         return nxt;
       });
-      setTimeout(() => setWrong(false), 900);
+      setTimeout(() => {
+        // Nhả các từ sai ra
+        setAnswers(a => {
+          const next = { ...a };
+          wrongKeys.forEach(k => next[k] = '');
+          return next;
+        });
+        setStatus('idle');
+      }, 1500);
     }
+  };
+
+  const pickBlank = (key) => {
+    if (status !== 'idle') return;
+    sfx.play('click'); setActiveBl(key);
+  };
+
+  const pickWord = (word) => {
+    if (!activeBl || status !== 'idle') return;
+    sfx.play('click');
+    setAnswers(a => ({ ...a, [activeBl]: word }));
+    setActiveBl(null);
+  };
+
+  const clearBlank = (key, e) => {
+    e.stopPropagation();
+    if (status !== 'idle') return;
+    sfx.play('click');
+    setAnswers(a => ({ ...a, [key]: '' }));
   };
 
   const usedWords = Object.values(answers).filter(Boolean);
   const bankWords = puzzle.wordBank.filter(w => !usedWords.includes(w));
-  const allFilled = blankKeys.every(k => answers[k]);
 
-  // Render text with clickable blanks
   const renderText = () => {
     const parts = puzzle.template.split(/(\{b\d\})/);
     return parts.map((part, i) => {
@@ -816,33 +1317,48 @@ function Level3({ onWin, onLose, lives, setLives }) {
         const key = m[1];
         const val = answers[key];
         const isActive = activeBl === key;
+        const isWrong = status === 'wrong' && val !== puzzle.blanks[key];
+        const isChecking = status === 'checking';
+        const isDone = status === 'done';
+
+        let bg = 'rgba(0,0,0,0.5)';
+        let border = 'rgba(245,158,11,0.2)';
+        let shadow = 'none';
+        let color = 'rgba(245,158,11,0.4)';
+
+        if (isActive) { bg = 'rgba(245,158,11,0.15)'; border = S.gold; shadow = '0 0 12px rgba(245,158,11,0.4)'; color = S.gold; }
+        else if (val) {
+          if (isDone) { bg = 'rgba(16,185,129,0.2)'; border = S.emerald; shadow = '0 0 15px rgba(16,185,129,0.5)'; color = S.emerald; }
+          else if (isWrong) { bg = 'rgba(239,68,68,0.2)'; border = S.red; shadow = '0 0 15px rgba(239,68,68,0.5)'; color = S.red; }
+          else if (isChecking) { bg = 'rgba(59,130,246,0.2)'; border = '#3b82f6'; shadow = '0 0 10px rgba(59,130,246,0.4)'; color = '#60a5fa'; }
+          else { bg = 'rgba(16,185,129,0.1)'; border = 'rgba(16,185,129,0.5)'; color = S.emerald; }
+        }
+
         return (
           <span key={i}
             onClick={() => pickBlank(key)}
+            className={`${val && !isChecking && !isWrong && !isDone ? 'slot-in' : ''} ${isWrong ? 'shake' : ''} ${isChecking ? 'pulse' : ''}`}
             style={{
-              display:'inline-flex', alignItems:'center', gap:6,
-              borderBottom:`2px solid ${isActive ? S.gold : val ? S.emerald : 'rgba(245,158,11,0.4)'}`,
-              background: isActive ? 'rgba(245,158,11,0.12)' : val ? 'rgba(16,185,129,0.1)' : 'transparent',
-              color: isActive ? S.gold : val ? S.emerald : 'rgba(245,158,11,0.7)',
-              borderRadius:8, padding:'3px 10px', margin:'0 4px',
-              fontSize:13, fontWeight:700, cursor:'pointer', fontFamily:'monospace',
-              transition:'all 0.2s',
-              boxShadow: isActive ? '0 0 12px rgba(245,158,11,0.2)' : 'none',
-              animation: isActive ? 'pulsate 1s ease-in-out infinite' : 'none'
+              display:'inline-flex', alignItems:'center', gap:8,
+              background:bg, border:`1px solid ${border}`, boxShadow:shadow, color,
+              borderRadius:10, padding:'4px 12px', margin:'0 6px',
+              fontSize:14, fontWeight:800, cursor: status==='idle' ? 'pointer' : 'default',
+              transition:'all 0.3s', position:'relative', overflow:'hidden'
             }}
           >
+            {isChecking && <div style={{ position:'absolute', top:0, left:'-100%', width:'50%', height:'100%', background:'linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent)', animation:'laserDraw 0.8s infinite linear' }} />}
             {val ? (
               <>
-                <span>{val}</span>
-                <span onClick={e => clearBlank(key,e)} style={{ color:S.red, fontSize:11, fontWeight:900 }}>✕</span>
+                <span style={{ position:'relative', zIndex:2 }}>{val}</span>
+                {status === 'idle' && <span onClick={e => clearBlank(key,e)} style={{ color:S.red, fontSize:12, fontWeight:900, position:'relative', zIndex:2 }}>✕</span>}
               </>
             ) : (
-              <span style={{ opacity:0.6, fontSize:11, fontStyle:'italic' }}>Lắp từ</span>
+              <span style={{ opacity:0.6, fontSize:12, fontStyle:'italic' }}>Trống</span>
             )}
           </span>
         );
       }
-      return <span key={i} style={{ fontSize:14, lineHeight:2 }}>{part}</span>;
+      return <span key={i} style={{ fontSize:15, lineHeight:2.2, color: status==='done' ? '#fcd34d' : 'inherit', transition:'color 0.5s' }}>{part}</span>;
     });
   };
 
@@ -850,68 +1366,72 @@ function Level3({ onWin, onLose, lives, setLives }) {
     <div style={S.screen}>
       <div style={{ textAlign:'center' }}>
         <h3 style={{ margin:0, fontSize:17, fontWeight:800, color:S.emerald, letterSpacing:3, textTransform:'uppercase' }}>
-          📜 Lắp Ghép Chân Lý Tư Tưởng
+          ⚗️ Lõi Năng Lượng Chân Lý
         </h3>
         <p style={{ margin:'6px 0 0', fontSize:12, color:'rgba(255,255,255,0.4)' }}>
-          Nhấp ô trống → chọn từ bên dưới. Hoàn thành trích dẫn của Chủ tịch Hồ Chí Minh.
+          Kích hoạt bia đá bằng cách lắp đúng mảnh chữ. Hệ thống sẽ tự động quét.
         </p>
       </div>
 
-      <div className={wrong ? 'shake' : ''} style={{ display:'flex', flexDirection:'column', gap:14 }}>
-        {/* Cuộn giấy */}
-        <div style={{
-          background:'linear-gradient(135deg, rgba(25,15,3,0.9), rgba(20,12,2,0.95))',
-          border:'1px solid rgba(180,130,50,0.35)', borderRadius:20,
-          padding:'22px 26px', position:'relative', overflow:'hidden'
+      <div style={{ display:'flex', flexDirection:'column', gap:18 }}>
+        {/* Bia Đá Trích Dẫn */}
+        <div className={status === 'wrong' ? 'shake' : ''} style={{
+          background:'linear-gradient(135deg, rgba(15,20,35,0.9), rgba(10,15,25,0.95))',
+          border:`1px solid ${status==='done' ? S.gold : status==='wrong' ? S.red : status==='checking' ? '#3b82f6' : 'rgba(59,130,246,0.3)'}`,
+          borderRadius:24, padding:'28px 32px', position:'relative', overflow:'hidden',
+          boxShadow: status==='done' ? '0 0 40px rgba(245,158,11,0.2)' : status==='wrong' ? '0 0 40px rgba(239,68,68,0.2)' : '0 10px 30px rgba(0,0,0,0.5)',
+          transition:'all 0.5s'
         }}>
-          <div style={{ position:'absolute', top:0, left:0, right:0, height:3, background:'linear-gradient(90deg, transparent, rgba(180,130,50,0.5), transparent)' }} />
-          <div style={{ position:'absolute', bottom:0, left:0, right:0, height:3, background:'linear-gradient(90deg, transparent, rgba(180,130,50,0.5), transparent)' }} />
-          <div style={{ fontSize:10, color:'rgba(180,130,50,0.7)', fontFamily:'monospace', letterSpacing:2, marginBottom:12 }}>
-            📜 TRÍCH "SỬA ĐỔI LỐI LÀM VIỆC" (1947):
+          {status === 'checking' && <div style={{ position:'absolute', top:0, bottom:0, width:4, background:'#60a5fa', boxShadow:'0 0 20px #3b82f6', animation:'laserDraw 0.8s linear forwards' }} />}
+          
+          <div style={{ display:'flex', justifyContent:'space-between', alignItems:'center', borderBottom:'1px solid rgba(255,255,255,0.06)', paddingBottom:12, marginBottom:16 }}>
+            <div style={{ fontSize:11, color:'rgba(59,130,246,0.8)', fontFamily:'monospace', letterSpacing:2, fontWeight:700 }}>
+              <span className="pulse" style={{ marginRight:6 }}>●</span> HỆ THỐNG VĂN KIỆN: {puzzle.src}
+            </div>
+            {status === 'checking' && <div style={{ fontSize:10, color:'#60a5fa', fontFamily:'monospace', animation:'pulsate 0.5s infinite' }}>ĐANG QUÉT...</div>}
+            {status === 'wrong' && <div style={{ fontSize:10, color:S.red, fontFamily:'monospace', fontWeight:900 }}>CẢNH BÁO: SAI LỆCH NĂNG LƯỢNG</div>}
+            {status === 'done' && <div style={{ fontSize:10, color:S.gold, fontFamily:'monospace', fontWeight:900 }}>MỞ KHÓA THÀNH CÔNG</div>}
           </div>
-          <div style={{ color:'rgba(255,245,220,0.9)', fontFamily:"'Cinzel', serif", fontStyle:'italic', lineHeight:2.2 }}>
+          
+          <div style={{ color:'rgba(241,245,249,0.9)', fontFamily:"Aptos, 'Inter', sans-serif", fontStyle:'italic', lineHeight:2.2, fontSize:16 }}>
             {renderText()}
           </div>
         </div>
 
-        {/* Word Bank */}
-        <div style={{ ...S.cardDark, padding:'16px 18px' }}>
-          <div style={{ fontSize:10, fontFamily:'monospace', letterSpacing:2, color:'rgba(255,255,255,0.35)', marginBottom:12 }}>
-            🔤 NGÂN HÀNG TỪ KHÓA:
+        {/* Word Bank Floating */}
+        <div style={{
+          ...S.cardDark, padding:'20px', display:'flex', flexDirection:'column', alignItems:'center', gap:16,
+          background:'rgba(0,0,0,0.4)', opacity: status !== 'idle' ? 0.5 : 1, transition:'opacity 0.3s'
+        }}>
+          <div style={{ fontSize:10, fontFamily:'monospace', letterSpacing:3, color:'rgba(255,255,255,0.3)' }}>
+            🔋 KHO MẢNH GHÉP
           </div>
-          <div style={{ display:'flex', flexWrap:'wrap', gap:8 }}>
+          
+          <div style={{ display:'flex', flexWrap:'wrap', gap:12, justifyContent:'center' }}>
             {bankWords.map((w,i) => (
-              <button key={i} onClick={() => pickWord(w)} disabled={!activeBl || done}
+              <button key={i} onClick={() => pickWord(w)} disabled={!activeBl || status !== 'idle'}
+                className="float"
                 style={{
-                  background: activeBl ? 'rgba(245,158,11,0.1)' : 'rgba(255,255,255,0.04)',
-                  border:`1px solid ${activeBl ? 'rgba(245,158,11,0.4)' : 'rgba(255,255,255,0.1)'}`,
-                  borderRadius:10, padding:'8px 16px', fontSize:12, fontFamily:'monospace',
-                  color: activeBl ? S.gold : 'rgba(255,255,255,0.4)', cursor: activeBl ? 'pointer' : 'not-allowed',
-                  transition:'all 0.2s'
+                  background: activeBl ? 'rgba(59,130,246,0.1)' : 'rgba(255,255,255,0.05)',
+                  border:`1px solid ${activeBl ? '#3b82f6' : 'rgba(255,255,255,0.1)'}`,
+                  borderRadius:12, padding:'10px 18px', fontSize:13, fontFamily:'monospace', fontWeight:600,
+                  color: activeBl ? '#60a5fa' : 'rgba(255,255,255,0.6)', cursor: activeBl ? 'pointer' : 'not-allowed',
+                  transition:'all 0.2s', boxShadow: activeBl ? '0 0 10px rgba(59,130,246,0.3)' : 'none',
+                  animationDelay:`${i*0.1}s`
                 }}
-                onMouseEnter={e => { if(activeBl) { e.currentTarget.style.background='rgba(245,158,11,0.2)'; e.currentTarget.style.transform='translateY(-2px)'; }}}
-                onMouseLeave={e => { e.currentTarget.style.background= activeBl ? 'rgba(245,158,11,0.1)' : 'rgba(255,255,255,0.04)'; e.currentTarget.style.transform='translateY(0)'; }}
+                onMouseEnter={e => { if(activeBl && status==='idle') { e.currentTarget.style.background='rgba(59,130,246,0.2)'; e.currentTarget.style.transform='scale(1.05)'; }}}
+                onMouseLeave={e => { e.currentTarget.style.background= activeBl ? 'rgba(59,130,246,0.1)' : 'rgba(255,255,255,0.05)'; e.currentTarget.style.transform='scale(1)'; }}
               >
                 {w}
               </button>
             ))}
           </div>
-          {!activeBl && bankWords.length > 0 && (
-            <p style={{ margin:'10px 0 0', fontSize:10, color:'rgba(245,158,11,0.5)', fontFamily:'monospace' }}>
-              💡 Nhấp chọn ô trống (viền vàng) trong đoạn văn bên trên trước.
-            </p>
+          
+          {!activeBl && bankWords.length > 0 && status === 'idle' && (
+            <div className="pulse" style={{ fontSize:11, color:'rgba(245,158,11,0.7)', fontFamily:'monospace', background:'rgba(245,158,11,0.1)', padding:'4px 12px', borderRadius:8 }}>
+              Chọn Lõi trống trên bia đá trước khi nạp mảnh ghép
+            </div>
           )}
-        </div>
-
-        <div style={{ display:'flex', justifyContent:'space-between', alignItems:'center' }}>
-          <div style={{ fontSize:11, fontFamily:'monospace' }}>
-            {wrong && <span style={{ color:S.red, fontWeight:700 }}>⚠️ Có từ sai! Kiểm tra lại và thử nộp lần nữa.</span>}
-            {done  && <span style={{ color:S.emerald, fontWeight:700 }}>✅ Chân lý chính xác! Đang chuyển màn...</span>}
-          </div>
-          <GlowButton onClick={check} disabled={!allFilled || done} color="#10b981"
-            style={{ fontSize:11, opacity: !allFilled || done ? 0.4 : 1, cursor: !allFilled || done ? 'not-allowed' : 'pointer' }}>
-            Nộp Bài & Kiểm Tra ➔
-          </GlowButton>
         </div>
       </div>
     </div>
@@ -919,110 +1439,308 @@ function Level3({ onWin, onLose, lives, setLives }) {
 }
 
 // ===========================================================================================
-// LEVEL 4 – BOSS FIGHT
+// LEVEL 4 – BOSS FIGHT (v3 - Summon Dice)
 // ===========================================================================================
 function Level4({ onWin, onLose, lives, setLives }) {
-  // Xáo trộn và lấy 8 câu ngẫu nhiên từ 12 boss statements
-  const [questions]           = useState(() => pickQuestions(ALL_BOSS_Q, 8));
-  const [bHp, setBHp]         = useState(questions.length); // Boss HP = số câu hỏi
+  const [questions]           = useState(() => shuffle([...ALL_BOSS_Q]));
+  const MAX_BOSS_HP = 15;
+  const MAX_PLAYER_HP = 5;
+  const [bHp, setBHp]         = useState(MAX_BOSS_HP);
   const [pHp, setPHp]         = useState(3);
   const [qIdx, setQIdx]       = useState(0);
   const [answered, setAnswered] = useState(false);
   const [correct, setCorrect]  = useState(false);
   const [timeLeft, setTime]    = useState(5);
   const [shake, setShake]      = useState('');
+  
+  // Hiệu ứng chiến đấu
+  const [proj, setProj]        = useState({ active: false, type: '' });
+  const [fText, setFText]      = useState({ active: false, text: '', target: '' });
+  const isEnraged = bHp <= Math.ceil(MAX_BOSS_HP / 2);
+  
+  // Cơ chế Combo & Xúc xắc
+  const [combo, setCombo]      = useState(0);
+  const [shield, setShield]    = useState(false);
+  const [dice, setDice]        = useState({ active: false, result: null });
+  const [summon, setSummon]    = useState(0); // 1-6
+
   const timerRef = useRef(null);
   const q = questions[qIdx % questions.length];
 
   useEffect(() => {
-    if (answered) return;
+    if (answered || dice.active || summon > 0) return;
     setTime(5);
     if (timerRef.current) clearInterval(timerRef.current);
     timerRef.current = setInterval(() => {
       setTime(t => {
-        if (t <= 1) { clearInterval(timerRef.current); timeout(); return 0; }
+        if (t <= 1) { clearInterval(timerRef.current); handleWrong(true); return 0; }
         return t - 1;
       });
     }, 1000);
     return () => clearInterval(timerRef.current);
-  }, [qIdx, answered]);
+  }, [qIdx, answered, dice.active, summon]);
 
-  const timeout = () => {
-    sfx.play('wrong'); setAnswered(true); setCorrect(false);
-    setPHp(p => Math.max(0, p-1)); setShake('player'); setTimeout(() => setShake(''), 500);
-    setLives(prev => { const n = prev-1; if(n<=0) onLose(); return Math.max(0,n); });
-  };
-
-  const answer = (choice) => {
-    if (answered) return;
-    clearInterval(timerRef.current);
-    sfx.play('click');
-    setAnswered(true);
-    const ok = choice === q.isTrue;
-    setCorrect(ok);
-    if (ok) {
-      sfx.play('correct');
-      const n = Math.max(0, bHp-1);
-      setBHp(n); setShake('boss'); setTimeout(() => setShake(''), 500);
-      if (n <= 0) setTimeout(() => onWin(1000), 900);
+  const triggerCombat = (isCorrect, callback) => {
+    if (isCorrect) {
+      setProj({ active: true, type: 'slash' });
+      setTimeout(() => {
+        sfx.play('correct'); setShake('boss');
+        setFText({ active: true, text: '-1 HP', target: 'boss' });
+        callback();
+        setTimeout(() => { setProj({ active:false, type:'' }); setFText({ active:false, text:'', target:'' }); }, 1000);
+      }, 300);
     } else {
-      sfx.play('wrong');
-      const n = Math.max(0, pHp-1);
-      setPHp(n); setShake('player'); setTimeout(() => setShake(''), 500);
-      setLives(prev => { const nx=prev-1; if(nx<=0) onLose(); return Math.max(0,nx); });
+      setProj({ active: true, type: 'orb' });
+      setTimeout(() => {
+        sfx.play('wrong'); setShake('player');
+        setFText({ active: true, text: '-1 HP!', target: 'player' });
+        callback();
+        setTimeout(() => { setProj({ active:false, type:'' }); setFText({ active:false, text:'', target:'' }); }, 1000);
+      }, 300);
     }
   };
 
+  const checkWinLose = (newBHp, newPHp, newLives) => {
+    if (newBHp <= 0) setTimeout(() => onWin(1500), 1200);
+    if (newLives <= 0) setTimeout(() => onLose(), 500);
+  };
+
+  const triggerSkill = (skillId) => {
+    setSummon(skillId);
+    let dmg = 0; let heal = 0; let applyShield = false;
+    if(skillId === 1) dmg = 3;
+    else if(skillId === 2) dmg = 2;
+    else if(skillId === 3) dmg = 4;
+    else if(skillId === 4) dmg = 5;
+    else if(skillId === 5) { heal = 1; applyShield = true; }
+    else if(skillId === 6) dmg = 3;
+
+    setTimeout(() => {
+      sfx.play('correct');
+      
+      let nextB = bHp; let nextP = pHp; let nextL = lives;
+      if (dmg > 0) {
+        nextB = Math.max(0, bHp - dmg);
+        setBHp(nextB);
+        setFText({ active:true, text:`-${dmg} HP (KỸ NĂNG)`, target:'boss' });
+        setShake('boss');
+      }
+      if (heal > 0) {
+        nextP = Math.min(MAX_PLAYER_HP, pHp + heal);
+        setPHp(nextP);
+        if (applyShield) setShield(true);
+        setFText({ active:true, text:`+${heal} HP & KHIÊN`, target:'player' });
+      }
+      setTimeout(() => { 
+        setSummon(0); 
+        setFText({active:false, text:'', target:''}); 
+        checkWinLose(nextB, nextP, nextL); 
+      }, 2000);
+    }, 800); // Wait for summon animation to hit
+  };
+
+  const handleCorrect = () => {
+    setAnswered(true); setCorrect(true);
+    const nextCombo = combo + 1;
+    
+    if (nextCombo >= 3) {
+      setCombo(0);
+      setDice({ active: true, result: null });
+      sfx.play('click');
+      // Roll dice animation
+      setTimeout(() => {
+        const res = Math.floor(Math.random() * 6) + 1;
+        setDice({ active: true, result: res });
+        sfx.play('correct');
+        setTimeout(() => {
+           setDice({ active: false, result: null });
+           triggerSkill(res);
+        }, 1500);
+      }, 1500);
+    } else {
+      setCombo(nextCombo);
+      triggerCombat(true, () => {
+         const nextB = Math.max(0, bHp - 1);
+         setBHp(nextB);
+         checkWinLose(nextB, pHp, lives);
+      });
+    }
+  };
+
+  const handleWrong = (isTimeout = false) => {
+    setAnswered(true); setCorrect(false);
+    setCombo(0);
+    if (shield) {
+       setShield(false);
+       sfx.play('correct'); // block sound
+       setFText({ active:true, text:'KHIÊN CHẶN ĐÒN!', target:'player' });
+       setTimeout(() => { setFText({active:false, text:'', target:''}); }, 1200);
+    } else {
+       triggerCombat(false, () => {
+         const nextP = Math.max(0, pHp - 1);
+         const nextL = lives - 1;
+         setPHp(nextP);
+         setLives(prev => Math.max(0, prev - 1));
+         checkWinLose(bHp, nextP, nextL);
+       });
+    }
+  };
+
+  const answer = (choice) => {
+    if (answered || dice.active || summon > 0) return;
+    clearInterval(timerRef.current);
+    sfx.play('click');
+    if (choice === q.isTrue) handleCorrect();
+    else handleWrong();
+  };
+
   const next = () => {
-    if (pHp <= 0 && lives > 0) { setPHp(3); }
+    if (pHp <= 0 && lives > 0) setPHp(3);
     setAnswered(false);
     setQIdx(i => i+1);
   };
 
+  const renderSummonVFX = () => {
+    if (!summon) return null;
+    return (
+      <div style={{ position:'absolute', inset:0, zIndex:20, pointerEvents:'none', overflow:'hidden', borderRadius:20 }}>
+        {summon === 1 && (
+          <>
+            <div className="meteor-1" style={{ position:'absolute', fontSize:40 }}>🌠</div>
+            <div className="meteor-2" style={{ position:'absolute', fontSize:30, top:20, left:20 }}>🌠</div>
+            <div className="meteor-3" style={{ position:'absolute', fontSize:35, top:-20, left:40 }}>🌠</div>
+          </>
+        )}
+        {summon === 2 && (
+          <div style={{ position:'absolute', inset:0, display:'flex', justifyContent:'space-around' }}>
+            <div className="fire-drop" style={{ fontSize:30 }}>🔥</div>
+            <div className="fire-drop" style={{ fontSize:20, animationDelay:'0.2s' }}>🔥</div>
+            <div className="fire-drop" style={{ fontSize:40, animationDelay:'0.1s' }}>🔥</div>
+            <div className="fire-drop" style={{ fontSize:25, animationDelay:'0.3s' }}>🔥</div>
+          </div>
+        )}
+        {summon === 3 && (
+          <div className="meteorite-drop" style={{ position:'absolute', left:'70%', fontSize:80, filter:'drop-shadow(0 10px 10px rgba(0,0,0,0.5))' }}>🪨</div>
+        )}
+        {summon === 4 && (
+          <div className="dragon-fly" style={{ position:'absolute', top:'20%', fontSize:80, filter:'drop-shadow(0 0 20px #ef4444)' }}>🐉</div>
+        )}
+        {summon === 5 && (
+          <div style={{ position:'absolute', left:'10%', bottom:'20%', width:100, height:100, background:'radial-gradient(circle, rgba(16,185,129,0.4) 0%, transparent 70%)', animation:'glowBoss 1s forwards' }} />
+        )}
+        {summon === 6 && (
+          <div style={{ position:'absolute', left:'70%', top:0, width:10, height:120, background:'#fcd34d', boxShadow:'0 0 20px #fcd34d', className:'lightning-strike' }} />
+        )}
+      </div>
+    );
+  };
+
   return (
-    <div style={S.screen}>
+    <div style={{...S.screen, transition:'background 1s', background: isEnraged ? 'radial-gradient(ellipse at center, rgba(80,10,10,0.9) 0%, rgba(10,5,5,1) 100%)' : S.screen.background}}>
+      
+      {/* Cảnh báo Enrage */}
+      {isEnraged && (
+        <>
+          <div style={{ position:'absolute', top:0, left:0, right:0, height:8, background:'repeating-linear-gradient(45deg, #f59e0b, #f59e0b 20px, #000 20px, #000 40px)' }} />
+          <div style={{ position:'absolute', bottom:0, left:0, right:0, height:8, background:'repeating-linear-gradient(45deg, #000, #000 20px, #f59e0b 20px, #f59e0b 40px)' }} />
+        </>
+      )}
+
       <div style={{ textAlign:'center' }}>
-        <h3 style={{ margin:0, fontSize:17, fontWeight:800, color:S.red, letterSpacing:3, textTransform:'uppercase' }}>
-          👹 Trận Chiến Cuối – Boss Fight
+        <h3 style={{ margin:0, fontSize:17, fontWeight:800, color: isEnraged ? '#ef4444' : S.red, letterSpacing:3, textTransform:'uppercase' }}>
+          👹 {isEnraged ? 'BOSS CUỒNG NỘ' : 'Trận Chiến Cuối – Boss Fight'}
         </h3>
         <p style={{ margin:'6px 0 0', fontSize:12, color:'rgba(255,255,255,0.4)' }}>
-          Phán xét Đúng/Sai trong vòng 5 giây. Phản xạ nhanh!
+          Cứ 3 Combo đúng liên tiếp sẽ triệu hồi xúc xắc ma thuật!
         </p>
       </div>
 
       {/* Battle field */}
-      <div style={{
-        display:'grid', gridTemplateColumns:'1fr 60px 1fr', gap:16, alignItems:'center',
-        background:'rgba(0,0,0,0.5)', border:'1px solid rgba(255,255,255,0.05)',
-        borderRadius:20, padding:'20px 24px'
+      <div className={(isEnraged && !answered && !dice.active) ? 'pulse' : ''} style={{
+        display:'grid', gridTemplateColumns:'1fr 60px 1fr', gap:16, alignItems:'center', position:'relative',
+        background: isEnraged ? 'rgba(30,0,0,0.6)' : 'rgba(0,0,0,0.5)', border: isEnraged ? '1px solid rgba(239,68,68,0.3)' : '1px solid rgba(255,255,255,0.05)',
+        borderRadius:20, padding:'20px 24px', boxShadow: isEnraged ? '0 0 40px rgba(239,68,68,0.1)' : 'none'
       }}>
-        <CombatantCard emoji="🧑‍✈️" label="Bản Lĩnh Ta" hp={pHp} maxHp={3} color="#10b981" shade="rgba(16,185,129,0.15)" shake={shake==='player'} />
-        <div style={{ textAlign:'center', color:'rgba(255,255,255,0.12)', fontSize:26, fontWeight:900 }}>VS</div>
-        <CombatantCard emoji="👹" label="Boss Luận Điệu" hp={bHp} maxHp={questions.length} color="#ef4444" shade="rgba(239,68,68,0.15)" shake={shake==='boss'} reverse bossMode />
+        {renderSummonVFX()}
+        
+        {/* Khu vực Người chơi */}
+        <div style={{ position:'relative' }}>
+          <CombatantCard emoji="🧑‍✈️" label="Bản Lĩnh Ta" hp={pHp} maxHp={MAX_PLAYER_HP} color="#10b981" shade="rgba(16,185,129,0.15)" shake={shake==='player'} />
+          {shield && <div style={{ position:'absolute', top:-5, right:-5, fontSize:20, animation:'pulsate 1.5s infinite' }}>🛡️</div>}
+          {fText.active && fText.target === 'player' && (
+            <div style={{ position:'absolute', top:'-20px', left:'50%', transform:'translateX(-50%)', color:S.red, fontWeight:900, fontSize:16, textShadow:'0 0 10px #000', animation:'floatTextUp 1s forwards', whiteSpace:'nowrap', pointerEvents:'none', zIndex:30 }}>
+              {fText.text}
+            </div>
+          )}
+        </div>
+
+        {/* Projectile & Dice Area */}
+        <div style={{ position:'relative', height:60, display:'flex', justifyContent:'center', alignItems:'center' }}>
+          {!dice.active && <div style={{ textAlign:'center', color: isEnraged ? 'rgba(239,68,68,0.3)' : 'rgba(255,255,255,0.12)', fontSize:26, fontWeight:900 }}>VS</div>}
+          
+          {/* Combo Indicator */}
+          {!dice.active && combo > 0 && (
+            <div style={{ position:'absolute', bottom:-20, fontSize:10, color:S.gold, fontWeight:800, whiteSpace:'nowrap', background:'rgba(245,158,11,0.2)', padding:'2px 8px', borderRadius:8 }}>
+              Combo: {combo}/3
+            </div>
+          )}
+
+          {proj.active && proj.type === 'slash' && (
+            <div style={{ position:'absolute', fontSize:32, color:S.emerald, textShadow:'0 0 20px #10b981', animation:'slashFly 0.3s forwards', zIndex:10 }}>⚡</div>
+          )}
+          {proj.active && proj.type === 'orb' && (
+            <div style={{ position:'absolute', fontSize:32, filter:'hue-rotate(250deg)', animation:'orbFly 0.3s forwards', zIndex:10 }}>🔮</div>
+          )}
+          
+          {/* Dice Overlay */}
+          {dice.active && (
+            <div style={{ position:'absolute', zIndex:50, display:'flex', flexDirection:'column', alignItems:'center' }}>
+              <div className={dice.result ? "pulse" : "dice-rolling"} style={{
+                width:50, height:50, background:'linear-gradient(135deg, #f59e0b, #d97706)',
+                borderRadius:10, border:'2px solid #fff', display:'flex', alignItems:'center', justifyContent:'center',
+                fontSize:24, fontWeight:900, color:'#000', boxShadow:'0 0 20px rgba(245,158,11,0.5)'
+              }}>
+                {dice.result ? dice.result : '?'}
+              </div>
+            </div>
+          )}
+        </div>
+
+        {/* Khu vực Boss */}
+        <div style={{ position:'relative' }}>
+          <CombatantCard emoji="👹" label="Boss Luận Điệu" hp={bHp} maxHp={MAX_BOSS_HP} color="#ef4444" shade="rgba(239,68,68,0.15)" shake={shake==='boss'} reverse bossMode={!isEnraged} />
+          {isEnraged && <div style={{ position:'absolute', inset:-10, borderRadius:'50%', background:'radial-gradient(circle, rgba(239,68,68,0.2) 0%, transparent 70%)', animation:'glowBoss 0.5s infinite', zIndex:-1, pointerEvents:'none' }} />}
+          {fText.active && fText.target === 'boss' && (
+            <div style={{ position:'absolute', top:'-20px', left:'50%', transform:'translateX(-50%)', color:S.gold, fontWeight:900, fontSize:16, textShadow:'0 0 10px #000', animation:'floatTextUp 1s forwards', whiteSpace:'nowrap', pointerEvents:'none', zIndex:30 }}>
+              {fText.text}
+            </div>
+          )}
+        </div>
       </div>
 
       {/* Timer bar */}
-      {!answered && (
-        <div style={{ background:'rgba(0,0,0,0.5)', borderRadius:999, height:8, overflow:'hidden', border:'1px solid rgba(255,255,255,0.05)' }}>
+      {!answered && !dice.active && !summon && (
+        <div className={timeLeft <= 2 ? 'pulse-fast' : ''} style={{ background:'rgba(0,0,0,0.5)', borderRadius:999, height:8, overflow:'hidden', border: timeLeft <= 2 ? '1px solid rgba(239,68,68,0.5)' : '1px solid rgba(255,255,255,0.05)' }}>
           <div style={{
             height:'100%', borderRadius:999,
             background: timeLeft <= 2 ? 'linear-gradient(90deg, #dc2626, #ef4444)' : 'linear-gradient(90deg, #f59e0b, #fcd34d)',
             width:`${(timeLeft/5)*100}%`, transition:'width 1s linear',
-            boxShadow: timeLeft <= 2 ? '0 0 10px rgba(239,68,68,0.5)' : '0 0 10px rgba(245,158,11,0.4)'
+            boxShadow: timeLeft <= 2 ? '0 0 15px rgba(239,68,68,0.8)' : '0 0 10px rgba(245,158,11,0.4)'
           }} />
         </div>
       )}
 
       {/* Statement card */}
-      {bHp > 0 && pHp > 0 && (
+      {bHp > 0 && pHp > 0 && !dice.active && !summon && (
         <div style={{ display:'flex', flexDirection:'column', gap:14 }}>
           <div style={{
-            ...S.cardDark, padding:'22px 28px', textAlign:'center', position:'relative'
+            ...S.cardDark, padding:'22px 28px', textAlign:'center', position:'relative',
+            border: isEnraged ? '1px solid rgba(239,68,68,0.3)' : '1px solid rgba(255,255,255,0.08)'
           }}>
-            <div className="pulse" style={{ fontSize:10, color:S.red, fontFamily:'monospace', letterSpacing:2, marginBottom:12 }}>
+            <div className={timeLeft <= 2 && !answered ? "pulse-fast" : "pulse"} style={{ fontSize:10, color:S.red, fontFamily:'monospace', letterSpacing:2, marginBottom:12 }}>
               ⚡ NHẬN ĐỊNH CỦA BOSS · {!answered && `${timeLeft} GIÂY`}
             </div>
-            <p style={{ margin:0, fontSize:15, fontWeight:700, color:'#f1f5f9', lineHeight:1.7, fontFamily:"'Cinzel', serif", fontStyle:'italic' }}>
+            <p style={{ margin:0, fontSize:16, fontWeight:600, color:'#f1f5f9', lineHeight:1.7, fontFamily:"Aptos, 'Inter', sans-serif", fontStyle:'italic' }}>
               "{q.stmt}"
             </p>
           </div>
