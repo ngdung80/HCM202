@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #080a0f;
+  color: #f1f5f9;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+  user-select: none;
+}
+
+/* ===== CUSTOM KEYFRAME ANIMATIONS ===== */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  15%, 45%, 75% { transform: translateX(-8px); }
+  30%, 60%, 90% { transform: translateX(8px); }
+}
+
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 0 15px rgba(251, 191, 36, 0.3); }
+  50%       { box-shadow: 0 0 35px rgba(251, 191, 36, 0.6); }
+}
+
+@keyframes bossGlow {
+  0%, 100% { filter: drop-shadow(0 0 10px rgba(239,68,68,0.4)); }
+  50%       { filter: drop-shadow(0 0 25px rgba(239,68,68,0.9)); }
+}
+
+@keyframes starFloat {
+  0%   { transform: translateY(0px) rotate(0deg); opacity: 0.6; }
+  50%  { transform: translateY(-20px) rotate(180deg); opacity: 1; }
+  100% { transform: translateY(0px) rotate(360deg); opacity: 0.6; }
+}
+
+@keyframes countdownPulse {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.15); }
+}
+
+@keyframes hpDrain {
+  0%   { transform: scaleX(1); }
+  100% { transform: scaleX(var(--hp-scale)); }
+}
+
+/* ===== UTILITY CLASSES ===== */
+.animate-fade-up {
+  animation: fadeInUp 0.4s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+}
+
+.animate-shake {
+  animation: shake 0.5s ease-in-out;
+}
+
+.animate-glow {
+  animation: glowPulse 2s ease-in-out infinite;
+}
+
+.animate-boss-glow {
+  animation: bossGlow 1.5s ease-in-out infinite;
+}
+
+.animate-countdown {
+  animation: countdownPulse 1s ease-in-out infinite;
+}
+
+/* ===== GLASSMORPHISM BASE ===== */
+.glass {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.glass-gold {
+  background: rgba(251, 191, 36, 0.05);
+  border: 1px solid rgba(251, 191, 36, 0.2);
+  backdrop-filter: blur(20px);
+}
+
+.glass-red {
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  backdrop-filter: blur(20px);
+}
+
+.glass-green {
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+}
+
+/* ===== HP BARS ===== */
+.hp-bar-container {
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 2px;
+  height: 14px;
+  overflow: hidden;
+}
+
+.hp-bar-fill {
+  height: 100%;
+  border-radius: 999px;
+  transition: width 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* ===== CHOICE BUTTONS ===== */
+.choice-btn {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.choice-btn::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.04), transparent);
+  transition: left 0.4s;
+}
+
+.choice-btn:hover::before {
+  left: 100%;
+}
+
+.choice-btn:hover {
+  transform: translateX(4px);
+  box-shadow: -3px 0 15px rgba(251, 191, 36, 0.15);
+  border-color: rgba(251, 191, 36, 0.5) !important;
+}
+
+/* ===== WORD BANK CHIPS ===== */
+.word-chip {
+  transition: all 0.2s ease;
+  cursor: pointer;
+  border-radius: 8px;
+  font-family: 'Inter', monospace;
+}
+
+.word-chip:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(251, 191, 36, 0.2);
+}
+
+/* ===== SCROLL PAPER TEXTURE ===== */
+.scroll-paper {
+  background:
+    radial-gradient(ellipse at top left, rgba(180, 130, 50, 0.06) 0%, transparent 60%),
+    radial-gradient(ellipse at bottom right, rgba(180, 130, 50, 0.04) 0%, transparent 60%),
+    linear-gradient(135deg, rgba(30, 20, 5, 0.6) 0%, rgba(15, 10, 3, 0.8) 100%);
+  border: 1px solid rgba(180, 130, 50, 0.3);
+  border-radius: 20px;
+  position: relative;
+}
+
+.scroll-paper::before,
+.scroll-paper::after {
+  content: '';
+  position: absolute;
+  left: 8px; right: 8px;
+  height: 6px;
+  background: rgba(180, 130, 50, 0.15);
+  border-radius: 3px;
+}
+
+.scroll-paper::before { top: -3px; }
+.scroll-paper::after  { bottom: -3px; }
+
+/* ===== FLOATING BACKGROUND PARTICLES ===== */
+.particle {
+  position: absolute;
+  pointer-events: none;
+  animation: starFloat linear infinite;
+}
