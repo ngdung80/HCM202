@@ -36,6 +36,11 @@ class SoundFX {
 const sfx = new SoundFX();
 
 // ===========================================================================================
+// NHẠC NỀN – dùng file /music.mp3 trong public/
+// (quản lý bằng useRef trong component App)
+// ===========================================================================================
+
+// ===========================================================================================
 // DATABASE – CÂU HỎI & DỮ LIỆU TỪ GIÁO TRÌNH HCM202
 // ===========================================================================================
 // ── MÀN 1: 20 câu hỏi trắc nghiệm ──────────────────────────────────────────
@@ -203,6 +208,30 @@ export default function App() {
   const [screen, setScreen]   = useState('welcome');
   const [score, setScore]     = useState(0);
   const [lives, setLives]     = useState(3);
+  const [musicOn, setMusicOn] = useState(false);
+  const [musicHover, setMusicHover] = useState(false);
+  const audioRef = useRef(null);
+
+  useEffect(() => {
+    const audio = new Audio('/music.mp3');
+    audio.loop = true;
+    audio.volume = 0.45;
+    audioRef.current = audio;
+    return () => { audio.pause(); audio.src = ''; };
+  }, []);
+
+  const toggleMusic = () => {
+    sfx.play('click');
+    const audio = audioRef.current;
+    if (!audio) return;
+    if (musicOn) {
+      audio.pause();
+      setMusicOn(false);
+    } else {
+      audio.play().catch(() => {});
+      setMusicOn(true);
+    }
+  };
 
   const goLevel = (next, bonus = 0) => {
     sfx.play('level-win');
@@ -225,25 +254,71 @@ export default function App() {
 
   return (
     <>
-    {showIntro && <IntroPopup onClose={() => setShowIntro(false)} />}
+    {showIntro && <IntroPopup onClose={() => setShowIntro(false)} onStartMusic={() => {
+      const audio = audioRef.current;
+      if (audio && !musicOn) {
+        audio.play().catch(() => {});
+        setMusicOn(true);
+      }
+    }} />}
     <div style={{
-      height:'100vh', width:'100%', background:'#080a0f',
+      height:'100vh', width:'100%',
+      backgroundImage: "url('/backgroundV2.jpg')",
+      backgroundSize:'cover', backgroundPosition:'center', backgroundAttachment:'fixed',
       display:'flex', alignItems:'stretch', justifyContent:'center',
       padding:'10px', position:'relative', overflow:'hidden', fontFamily:"'Inter', sans-serif"
     }}>
+      {/* Overlay tối để giữ tính đọc được của nội dung */}
+      <div style={{
+        position:'absolute', inset:0, zIndex:0, pointerEvents:'none',
+        background:'linear-gradient(160deg, rgba(4,6,12,0.55) 0%, rgba(8,6,4,0.50) 50%, rgba(12,4,4,0.60) 100%)',
+      }} />
+      {/* ─── NÚT NHẠC NỀN – góc trên phải ─────────────────────────────── */}
+      <button
+        id="music-toggle-btn"
+        title={musicOn ? 'Tắt nhạc nền' : 'Bật nhạc nền'}
+        onMouseEnter={() => setMusicHover(true)}
+        onMouseLeave={() => setMusicHover(false)}
+        onClick={toggleMusic}
+        style={{
+          position:'fixed', top:18, right:18, zIndex:99999,
+          width:48, height:48,
+          borderRadius:'50%',
+          border: musicOn
+            ? '1.5px solid rgba(245,158,11,0.6)'
+            : '1.5px solid rgba(255,255,255,0.12)',
+          background: musicHover
+            ? (musicOn ? 'rgba(245,158,11,0.25)' : 'rgba(255,255,255,0.1)')
+            : (musicOn ? 'rgba(245,158,11,0.12)' : 'rgba(0,0,0,0.55)'),
+          backdropFilter:'blur(12px)',
+          cursor:'pointer',
+          display:'flex', alignItems:'center', justifyContent:'center',
+          fontSize:20,
+          transition:'all 0.25s cubic-bezier(0.16,1,0.3,1)',
+          transform: musicHover ? 'scale(1.12)' : 'scale(1)',
+          boxShadow: musicOn
+            ? '0 0 18px rgba(245,158,11,0.35), 0 4px 16px rgba(0,0,0,0.6)'
+            : '0 4px 16px rgba(0,0,0,0.5)',
+          animation: musicOn ? 'musicPulse 2s ease-in-out infinite' : 'none',
+          outline:'none',
+        }}
+      >
+        {musicOn ? '🎵' : '🔇'}
+      </button>
       {/* Ambient blobs */}
-      <div style={{ position:'absolute', inset:0, pointerEvents:'none' }}>
-        <div style={{ position:'absolute', top:'5%', left:'5%', width:500, height:500, background:'radial-gradient(circle, rgba(127,29,29,0.15) 0%, transparent 70%)', borderRadius:'50%' }} />
-        <div style={{ position:'absolute', bottom:'5%', right:'5%', width:600, height:600, background:'radial-gradient(circle, rgba(120,90,10,0.08) 0%, transparent 70%)', borderRadius:'50%' }} />
-        <div style={{ position:'absolute', inset:0, backgroundImage:'linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px)', backgroundSize:'40px 40px' }} />
+      <div style={{ position:'absolute', inset:0, pointerEvents:'none', zIndex:1 }}>
+        <div style={{ position:'absolute', top:'5%', left:'5%', width:500, height:500, background:'radial-gradient(circle, rgba(127,29,29,0.2) 0%, transparent 70%)', borderRadius:'50%' }} />
+        <div style={{ position:'absolute', bottom:'5%', right:'5%', width:600, height:600, background:'radial-gradient(circle, rgba(120,90,10,0.12) 0%, transparent 70%)', borderRadius:'50%' }} />
+        <div style={{ position:'absolute', inset:0, backgroundImage:'linear-gradient(rgba(255,255,255,0.018) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.018) 1px, transparent 1px)', backgroundSize:'40px 40px' }} />
       </div>
 
       {/* Main card */}
       <div style={{
         width:'100%', maxWidth:1200, flex:1, position:'relative', zIndex:10,
-        background:'rgba(12,10,8,0.85)', border:'1px solid rgba(255,255,255,0.08)',
+        background:'rgba(10,8,5,0.55)', border:'1px solid rgba(255,255,255,0.13)',
         borderRadius:24, padding:'32px 56px',
-        backdropFilter:'blur(24px)', boxShadow:'0 30px 80px rgba(0,0,0,0.9)',
+        backdropFilter:'blur(20px) saturate(1.6) brightness(1.1)',
+        boxShadow:'0 30px 80px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.08)',
         display:'flex', flexDirection:'column', gap:24, overflow:'auto'
       }}>
         {/* HEADER */}
@@ -308,8 +383,22 @@ export default function App() {
           {screen === 'gameover' && <GameOverScreen score={score} onRestart={restart} />}
         </main>
 
-        <footer style={{ textAlign:'center', fontSize:10, color:'rgba(255,255,255,0.12)', borderTop:'1px solid rgba(255,255,255,0.05)', paddingTop:14, letterSpacing:3, textTransform:'uppercase', fontFamily:'monospace' }}>
-          Giáo dục tích hợp game hóa cao cấp · Antigravity · 2026
+        <footer style={{ 
+          textAlign:'center', 
+          fontSize:14, 
+          fontWeight: 800,
+          borderTop:'1px solid rgba(255,255,255,0.05)', 
+          paddingTop:18, 
+          letterSpacing:4, 
+          textTransform:'uppercase', 
+          fontFamily:"'Aptos', sans-serif",
+          background: 'linear-gradient(135deg, #fcd34d 0%, #f59e0b 50%, #ef4444 100%)',
+          WebkitBackgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
+          backgroundClip: 'text',
+          filter: 'drop-shadow(0 2px 8px rgba(245,158,11,0.4))'
+        }}>
+          Không có gì quý hơn độc lập tự do
         </footer>
       </div>
 
@@ -318,6 +407,7 @@ export default function App() {
         @keyframes fadeUp { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
         @keyframes introPop { from { opacity:0; transform:scale(0.88) translateY(24px); } to { opacity:1; transform:scale(1) translateY(0); } }
         @keyframes introFadeIn { from { opacity:0; } to { opacity:1; } }
+        @keyframes musicPulse { 0%,100%{box-shadow:0 0 12px rgba(245,158,11,0.3),0 4px 16px rgba(0,0,0,0.6);} 50%{box-shadow:0 0 28px rgba(245,158,11,0.7),0 4px 20px rgba(0,0,0,0.6);} }
         @keyframes shimmerLine { 0%{background-position:200% center} 100%{background-position:-200% center} }
         @keyframes starFloat { 0%,100%{transform:translateY(0) rotate(0deg);} 50%{transform:translateY(-10px) rotate(180deg);} }
         @keyframes shakeFx { 0%,100%{transform:translateX(0)} 20%,60%{transform:translateX(-8px)} 40%,80%{transform:translateX(8px)} }
@@ -378,7 +468,7 @@ export default function App() {
 // ===========================================================================================
 // INTRO POPUP
 // ===========================================================================================
-function IntroPopup({ onClose }) {
+function IntroPopup({ onClose, onStartMusic }) {
   const [hovered, setHovered] = useState(false);
   const members = [
     'Nguyễn Hoàng Cường',
@@ -396,14 +486,19 @@ function IntroPopup({ onClose }) {
   return (
     <div style={{
       position:'fixed', inset:0, zIndex:9999,
-      background:'rgba(4,6,12,0.93)',
-      backdropFilter:'blur(16px)',
+      backgroundImage: "url('/backgroundV2.jpg')",
+      backgroundSize:'cover', backgroundPosition:'center',
       display:'flex', alignItems:'flex-start', justifyContent:'center',
       padding:'16px',
       animation:'introFadeIn 0.5s ease forwards',
       fontFamily:"'Inter', sans-serif",
       overflowY:'auto',
     }}>
+      {/* Dark overlay trên background */}
+      <div style={{
+        position:'fixed', inset:0, zIndex:0, pointerEvents:'none',
+        background:'linear-gradient(160deg, rgba(2,4,10,0.60) 0%, rgba(6,4,2,0.55) 50%, rgba(10,2,2,0.65) 100%)',
+      }} />
       {/* Ambient glow blobs */}
       <div style={{ position:'fixed', inset:0, pointerEvents:'none', overflow:'hidden', zIndex:0 }}>
         <div style={{ position:'absolute', top:'-10%', left:'-10%', width:500, height:500, background:'radial-gradient(circle, rgba(220,38,38,0.12) 0%, transparent 65%)', borderRadius:'50%' }} />
@@ -414,7 +509,8 @@ function IntroPopup({ onClose }) {
       {/* Main card */}
       <div style={{
         position:'relative', zIndex:10,
-        background:'linear-gradient(160deg, rgba(14,11,8,0.98) 0%, rgba(20,14,10,0.98) 100%)',
+        background:'linear-gradient(160deg, rgba(14,11,8,0.45) 0%, rgba(20,14,10,0.55) 100%)',
+        backdropFilter:'blur(20px) saturate(1.4)',
         border:'1px solid rgba(245,158,11,0.22)',
         borderRadius:28, padding:'32px 40px',
         maxWidth:760, width:'100%',
@@ -541,7 +637,7 @@ function IntroPopup({ onClose }) {
             id="intro-start-btn"
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
-            onClick={() => { sfx.play('click'); onClose(); }}
+            onClick={() => { sfx.play('click'); onStartMusic && onStartMusic(); onClose(); }}
             style={{
               position:'relative', overflow:'hidden',
               background: hovered
